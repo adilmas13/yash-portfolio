@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Yfx;
+    src: url('../fonts/Yfx-Regular.otf');
+}
+
+@font-face {
+    font-family: b-bold;
+    src: url('../fonts/Brandon_bld.otf');
+}
+
+@font-face {
+    font-family: b-regular-italics;
+    src: url('../fonts/brandon-grotesque-regular-italic.otf');
+}
+
+@font-face {
+    font-family: b-light;
+    src: url('../fonts/brandon-grotesque-light.otf');
+}
+
+@font-face {
+    font-family: b-bold-italic;
+    src: url('../fonts/brandon-grotesque-bold-italic.otf');
+}
+
+@font-face {
+    font-family: b-black;
+    src: url('../fonts/brandon-grotesque-black.otf');
+}
+
+
