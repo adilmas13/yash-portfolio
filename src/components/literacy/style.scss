@@ -1,6 +1,4 @@
-//@import "styles/fonts.css";
-//@import "styles/colors";
-//@import "styles/mixins";
+@import "../../assets/styles/colors";
 
 .parent {
   display: flex;
@@ -26,7 +24,7 @@
         text-transform: capitalize;
         font-family: Yfx, serif;
         word-spacing: 20px;
-        color: #353335;
+        color: $secondary-text-color;
       }
 
       .details {
@@ -38,7 +36,7 @@
           font-size: 30px;
           text-align: end;
           list-style: none;
-          color: #000;
+          color: $text-primary-color;
           display: flex;
           flex-direction: column;
 
@@ -55,7 +53,7 @@
         .desc {
           font-size: 18px;
           list-style: none;
-          color: #000;
+          color: $text-primary-color;
           font-family: b-bold, sans-serif;
           display: flex;
           flex-direction: column;

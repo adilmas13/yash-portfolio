@@ -1,5 +1,4 @@
-//@import "styles/fonts.css";
-//@import "styles/colors";
+@import "../../assets/styles/colors";
 
 .parent {
   display: flex;
@@ -19,7 +18,7 @@
     justify-content: space-evenly;
 
     .top-wrapper {
-      color: #353335;
+      color: $secondary-text-color;
 
       .gender-age {
         font-size: 6rem;
@@ -38,7 +37,7 @@
     }
 
     .middle-wrapper {
-      color: #000000;
+      color: $text-primary-color;
 
       .name {
         font-family: b-light, serif;
@@ -70,7 +69,7 @@
     }
 
     .bottom-wrapper {
-      color: #000000;
+      color: $text-primary-color;
 
       .digits-letters-wrapper {
         display: flex;
