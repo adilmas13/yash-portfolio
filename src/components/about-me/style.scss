@@ -1,0 +1,107 @@
+//@import "styles/fonts.css";
+//@import "styles/colors";
+
+.parent {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: flex-end;
+
+  .details-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    padding: 0 8rem;
+    justify-content: space-evenly;
+
+    .top-wrapper {
+      color: #353335;
+
+      .gender-age {
+        font-size: 6rem;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        word-spacing: 20px;
+      }
+
+      .designation {
+        font-size: 3.25rem;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        margin-top: 2rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    .middle-wrapper {
+      color: #000000;
+
+      .name {
+        font-family: b-light, serif;
+        font-size: 50px;
+        letter-spacing: 1px;
+      }
+
+      .noun-success {
+        font-size: 30px;
+
+        span {
+          &:first-child {
+            font-family: b-bold-italic, serif;
+          }
+
+          &:last-child {
+            font-family: b-regular-italics, serif;
+          }
+        }
+      }
+
+      .description {
+        font-family: b-regular-italics, serif;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        font-size: 18px;
+        margin-top: 1rem;
+      }
+    }
+
+    .bottom-wrapper {
+      color: #000000;
+
+      .digits-letters-wrapper {
+        display: flex;
+
+        .split {
+          display: flex;
+          flex-direction: column;
+
+          &:last-child {
+            margin-left: 2rem;
+          }
+
+          span {
+            &:first-child {
+              text-transform: uppercase;
+              font-family: b-bold-italic, serif;
+            }
+
+            &:last-child {
+              font-family: b-regular-italics, serif;
+              font-size: 16px;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-image {
+    height: 100%;
+  }
+}
+
