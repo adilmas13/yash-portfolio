@@ -1,8 +1,9 @@
-import Literacy from "./literacy";
+import Experience from "./experience";
+import AboutMe from "./about-me";
 
 const App = () => (
     <div id="app">
-        <Literacy/>
+        <AboutMe/>
     </div>
 )
 

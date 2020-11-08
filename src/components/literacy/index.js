@@ -2,38 +2,41 @@
 import React from "preact";
 import style from './style.css';
 
-const Literacy = () => (
-    <div class={style.parent}>
+const Literacy = () => {
+    const data = [
+        {field: 'applied arts', place: 'RACHANA SANSAD', degree: 'Diploma'},
+        {field: 'advertising', place: 'MUMBAI UNIVERSITY', degree: 'BMM Degree'},
+        {field: 'graphics', place: 'FRAMEBOXX VISUAL EFFECTS'},
+        {field: 'commerce', place: 'MUMBAI UNIVERSITY', degree: 'Junior Degree'},
+        {field: 'dco', place: 'A+ COMPUTER INSTITUTE'},
+        {field: 'ssc', place: 'MAHARASHTRA STATE BOARD'},
+    ];
+    return <div class={style.parent}>
         <div style="position: relative; height: 100%; margin-right: 3.5rem">
             <img src="assets/literacy_shadow.png" alt="yash-shadow" class={style['main-image']}/>
-            <img src="assets/literacy.png" alt="yash" class={style['main-image']} style="position: absolute; right: 10px"/>
+            <img src="assets/literacy.png" alt="yash" class={style['main-image']}
+                 style="position: absolute; right: 10px"/>
         </div>
         <div class={style['details-wrapper']}>
             <div class={style.wrapper}>
                 <div class={style.header}>literacy</div>
                 <div class={style.details}>
                     <div class={style.titles}>
-                        <span>applied arts <span>&#8250;</span></span>
-                        <span>advertising <span>&#8250;</span></span>
-                        <span>graphics <span>&#8250;</span></span>
-                        <span>commerce <span>&#8250;</span></span>
-                        <span>dco <span>&#8250;</span></span>
-                        <span>ssc <span>&#8250;</span></span>
+                        {data.map(it => <span>{it.field} <span>&#8250;</span></span>)}
                         <span><span>&#8250;</span></span>
                     </div>
                     <div class={style.desc}>
-                        <span>RACHANA SANSAD <span class={style.degree}>Diploma</span></span>
-                        <span>MUMBAI UNIVERSITY <span class={style.degree}>BMM Degree</span></span>
-                        <span>FRAMEBOXX VISUAL EFFECTS</span>
-                        <span>MUMBAI UNIVERSITY <span class={style.degree}>Junior Degree</span></span>
-                        <span>A+ COMPUTER INSTITUTE </span>
-                        <span>MAHARASHTRA STATE BOARD</span>
+                        {data.map(it => (
+                            <span>{it.place}
+                                {it.degree && <span class={style.degree}>{it.degree}</span>}
+                                </span>)
+                        )}
                         <span><span class={style['download-cv']}>download CV</span></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-);
+};
 
 export default Literacy;

@@ -2,11 +2,18 @@
 import React from "preact";
 import style from './style.css';
 
-const Experience = () => (
-    <div class={style.parent}>
+const Experience = () => {
+    const data = [
+        {place: 'ddb mudra', experience: '1.7 YEARS', designation: 'senior art director'},
+        {place: 'leo burnett', experience: '3.8 YEARS', designation: 'art director'},
+        {place: 'leo burnett', experience: '2.0 YEARS', designation: 'graphic designer'},
+        {place: 'percept art', experience: '1.0 YEARS', designation: 'freelance designer'}
+    ];
+
+    return <div class={style.parent}>
         <div class={style['image-wrapper']}>
-            <img src="assets/experience_shadow.png" alt="yash-shadow" class={style['shadow-image']} />
-            <img src="assets/experience.png" alt="yash" class={style['main-image']} />
+            <img src="assets/experience_shadow.png" alt="yash-shadow" class={style['shadow-image']}/>
+            <img src="assets/experience.png" alt="yash" class={style['main-image']}/>
         </div>
         <div class={style['right-content']}>
             <div class={style['details-wrapper']}>
@@ -29,22 +36,16 @@ const Experience = () => (
                 <div class={style['middle-wrapper']}>
                     <div class={style.details}>
                         <div class={style.titles}>
-                            <span>ddb mudra<span>&#8250;</span></span>
-                            <span>leo burnett<span>&#8250;</span></span>
-                            <span>leo burnett<span>&#8250;</span></span>
-                            <span>percept art<span>&#8250;</span></span>
+                            {data.map(it => <span>{it.place}<span>&#8250;</span></span>)}
                         </div>
                         <div class={style.desc}>
-                            <span>1.7 YEARS<span class={style.designation}>senior art director</span></span>
-                            <span>3.8 YEARS<span class={style.designation}>art director</span></span>
-                            <span>2.0 YEARS<span class={style.designation}>graphic designer</span></span>
-                            <span>1.0 YEARS<span class={style.designation}>freelance designer</span></span>
+                            {data.map(it => <span>{it.experience}<span class={style.designation}>{it.designation}</span></span>)}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-);
+};
 
 export default Experience;
