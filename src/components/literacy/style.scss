@@ -1,0 +1,104 @@
+@import "../../assets/styles/colors";
+
+.parent {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: flex-end;
+
+  .details-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 4rem;
+
+    .wrapper{
+      .header {
+        font-size: 6rem;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        word-spacing: 20px;
+        color: $secondary-text-color;
+      }
+
+      .details {
+        display: flex;
+        margin-top: 4rem;
+
+        .titles {
+          font-family: b-light, serif;
+          font-size: 30px;
+          text-align: end;
+          list-style: none;
+          color: $text-primary-color;
+          display: flex;
+          flex-direction: column;
+
+          span {
+            height: 50px;
+
+            span {
+              opacity: 0.2;
+              margin: 0 0.6rem;
+            }
+          }
+        }
+
+        .desc {
+          font-size: 18px;
+          list-style: none;
+          color: $text-primary-color;
+          font-family: b-bold, sans-serif;
+          display: flex;
+          flex-direction: column;
+
+          span {
+            height: 50px;
+            display: flex;
+            font-size: 16px;
+            align-items: center;
+            padding-top: 5px;
+
+            .degree {
+              font-family: b-regular-italics, sans-serif;
+
+              &::before {
+                content: '|';
+                font-family: b-light, sans-serif;
+                font-size: 20px;
+                margin: 0 14px;
+              }
+            }
+          }
+
+          span .download-cv {
+            height: fit-content;
+            font-family: b-light, sans-serif;
+            font-size: 14px;
+            border-radius: 5px;
+            background: black;
+            cursor: pointer;
+            color: white;
+            padding: 0 4px;
+            transition: 0.3s ease-out transform;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-image {
+    height: 100%;
+  }
+}
+
