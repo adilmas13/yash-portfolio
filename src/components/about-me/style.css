@@ -3,7 +3,9 @@
   display: flex;
   position: relative;
   height: 100vh;
-  justify-content: flex-end; }
+  width: 100vw;
+  justify-content: flex-end;
+  min-width: 100vw; }
   .parent .details-wrapper {
     position: absolute;
     left: 0;
