@@ -1,0 +1,20 @@
+.parent {
+  position: relative;
+  height: 100vh;
+  min-width: 100vw;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px; }
+  .parent .column {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0 5px; }
+    .parent .column img {
+      width: 100%;
+      margin: 5px 0;
+      border-radius: 10px;
+      object-fit: cover; }
+
+/*# sourceMappingURL=style.css.map */
