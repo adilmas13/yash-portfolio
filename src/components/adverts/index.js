@@ -5,10 +5,36 @@ import {useState} from "preact/hooks";
 import {adverts} from "./advertsService";
 
 const Preview = (props) => {
+    const media = props.media;
+    const parentHeight = document.body.clientHeight;
+    const parentWidth = document.body.clientWidth;
+
+    let width = parentWidth * 0.75;
+    let height = 0;
+
+    if (media.ratio === "16:9") {
+        height = width * (9 / 16);
+    }
+    if (media.ratio === "9:16") {
+        height = parentHeight * 0.80;
+        width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
+    }
+
     return (<div class={style.preview}>
-        <img class={style.cancel} src="assets/cancel.svg"
+        <img class={style.cancel}
+             src="assets/cancel.svg"
              onClick={props.onCancelClicked}
         />
+        <div class={style.body}>
+            {props.media.isVideo ?
+                <iframe width={width} height={height}
+                        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe> :
+                <img
+                    src={`assets/${media.image}.jpg`}
+                    height={height} width={width} />
+            }
+        </div>
     </div>)
 };
 
@@ -41,9 +67,9 @@ const MediaCell = (props) => {
 };
 
 const Adverts = () => {
-    const [isPreviewVisible, setPreviewVisibility] = useState(false);
+    const [previewMedia, setPreviewMedia] = useState(undefined);
     const onClicked = (media) => {
-        setPreviewVisibility(true);
+        setPreviewMedia(media);
     };
     return <div class={style.parent}>
         {adverts.map(it =>
@@ -51,7 +77,9 @@ const Adverts = () => {
                 {it.map(media => <MediaCell media={media} handleClick={onClicked} />)}
             </div>
         )}
-        {isPreviewVisible && <Preview onCancelClicked={() => setPreviewVisibility(false)} />}
+        {previewMedia && <Preview
+            media={previewMedia}
+            onCancelClicked={() => setPreviewMedia(undefined)} />}
     </div>
 };
 

@@ -40,6 +40,9 @@
   }
 
   .preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -62,6 +65,17 @@
         opacity: 0.5;
       }
     }
+
+    .body {
+      img {
+        border-radius: 40px;
+      }
+
+      iframe {
+        border-radius: 40px;
+      }
+    }
+
   }
 }
 

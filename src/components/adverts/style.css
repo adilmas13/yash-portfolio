@@ -29,6 +29,9 @@
         top: 0;
         left: 0; }
   .parent .preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -47,5 +50,9 @@
       .parent .preview .cancel:hover {
         transform: scale(1.1);
         opacity: 0.5; }
+    .parent .preview .body img {
+      border-radius: 40px; }
+    .parent .preview .body iframe {
+      border-radius: 40px; }
 
 /*# sourceMappingURL=style.css.map */
