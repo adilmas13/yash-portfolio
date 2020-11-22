@@ -28,7 +28,7 @@ const Preview = (props) => {
         <div class={style.body}>
             {props.media.isVideo ?
                 <iframe width={width} height={height}
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        src={`https://www.youtube.com/embed/${media.videoId}`}>
                 </iframe> :
                 <img
                     src={`assets/${media.image}.jpg`}
