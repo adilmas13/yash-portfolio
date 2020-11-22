@@ -15,11 +15,26 @@
     width: 200px;
     margin: 0 5px;
 
-    img {
+    .media-wrapper {
       width: 100%;
       margin: 5px 0;
       border-radius: 10px;
-      object-fit: cover;
+      position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      video {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
 

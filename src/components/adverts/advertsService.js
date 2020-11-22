@@ -1,0 +1,40 @@
+export const adverts = [
+    [
+        {image: 'kwality', isVideo: true, groupId: 1},
+        {image: 'polo', isVideo: true, groupId: 1},
+        {image: 'md1', isVideo: false, groupId: 1},
+        {image: 'cor1', isVideo: true, groupId: 1},
+        {image: 'cor2', isVideo: false, groupId: 1},
+        {image: 'trix3', isVideo: false, groupId: 1},
+        {image: 'jeep1', isVideo: false, groupId: 1},
+        {image: 'jeep4', isVideo: false, groupId: 1},
+        {image: 'jeep8', isVideo: false, groupId: 1},
+    ], [
+        {image: 'stayfree1', isVideo: true, groupId: 1},
+        {image: 'vw1', isVideo: false, groupId: 1},
+        {image: 'md2', isVideo: false, groupId: 1},
+        {image: 'cor3', isVideo: false, groupId: 1},
+        {image: 'happy1', isVideo: true, groupId: 1},
+        {image: 'bbc1', isVideo: true, groupId: 1},
+        {image: 'jeep2', isVideo: false, groupId: 1},
+        {image: 'jeep5', isVideo: false, groupId: 1},
+        {image: 'jeep9', isVideo: false, groupId: 1},
+    ], [
+        {image: 'stayfree2', isVideo: true, groupId: 1},
+        {image: 'vw2', isVideo: false, groupId: 1},
+        {image: 'md3', isVideo: false, groupId: 1},
+        {image: 'cor4', isVideo: false, groupId: 1},
+        {image: 'bbc2', isVideo: false, groupId: 1},
+        {image: 'jeep3', isVideo: false, groupId: 1},
+        {image: 'jeep7', isVideo: false, groupId: 1},
+    ], [
+        {image: 'facebook', isVideo: true, groupId: 1},
+        {image: 'vw3', isVideo: false, groupId: 1},
+        {image: 'md4', isVideo: false, groupId: 1},
+        {image: 'trix1', isVideo: true, groupId: 1},
+        {image: 'trix2', isVideo: false, groupId: 1},
+        {image: 'covid1', isVideo: false, groupId: 1},
+        {image: 'jeep6', isVideo: false, groupId: 1},
+        {image: 'jeep10', isVideo: false, groupId: 1},
+    ]
+];
