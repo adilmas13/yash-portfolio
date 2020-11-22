@@ -13,9 +13,9 @@ const Literacy = () => {
     ];
     return <div class={style.parent}>
         <div style="position: relative; height: 100%; margin-right: 3.5rem">
-            <img src="assets/literacy_shadow.png" alt="yash-shadow" class={style['main-image']}/>
+            <img src="assets/literacy_shadow.png" alt="yash-shadow" class={style['main-image']} />
             <img src="assets/literacy.png" alt="yash" class={style['main-image']}
-                 style="position: absolute; right: 10px"/>
+                 style="position: absolute; right: 10px" />
         </div>
         <div class={style['details-wrapper']}>
             <div class={style.wrapper}>

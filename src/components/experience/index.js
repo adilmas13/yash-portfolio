@@ -12,8 +12,8 @@ const Experience = () => {
 
     return <div class={style.parent}>
         <div class={style['image-wrapper']}>
-            <img src="assets/experience_shadow.png" alt="yash-shadow" class={style['shadow-image']}/>
-            <img src="assets/experience.png" alt="yash" class={style['main-image']}/>
+            <img src="assets/experience_shadow.png" alt="yash-shadow" class={style['shadow-image']} />
+            <img src="assets/experience.png" alt="yash" class={style['main-image']} />
         </div>
         <div class={style['right-content']}>
             <div class={style['details-wrapper']}>

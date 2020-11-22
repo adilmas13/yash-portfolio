@@ -22,9 +22,9 @@ const MediaCell = (media) => {
         setVideoVisibility(false);
     };
     return (<div class={style['media-wrapper']} onMouseEnter={onHover} onMouseLeave={onLeave}>
-        <img alt="adverts" src={image}/>
+        <img alt="adverts" src={image} />
         {(isVideoVisible && media.isVideo) &&
-        <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop/>}
+        <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop />}
     </div>)
 };
 const Adverts = () => {

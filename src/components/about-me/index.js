@@ -19,8 +19,9 @@ const AboutMe = () => {
 
     return <div class={style.parent}>
         <div style="position: relative; height: 100%; margin-right: 3.5rem">
-            <img src="assets/about_shadow.png" alt="yash-shadow" class={style['main-image']}/>
-            <img src="assets/about.png" alt="yash" class={style['main-image']} style="position: absolute; right: 10px"/>
+            <img src="assets/about_shadow.png" alt="yash-shadow" class={style['main-image']} />
+            <img src="assets/about.png" alt="yash" class={style['main-image']}
+                 style="position: absolute; right: 10px" />
         </div>
         <div class={style['details-wrapper']}>
             <div class={style['top-wrapper']}>
