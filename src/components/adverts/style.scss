@@ -1,40 +1,45 @@
 @import "../../assets/styles/colors";
 
 .parent {
-  position: relative;
   height: 100vh;
   min-width: 100vw;
-  overflow: scroll;
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
+  position: relative;
 
-  .column {
+  .scroll-container {
+    overflow: scroll;
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: 0 5px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    padding-top: 40px;
 
-    .media-wrapper {
-      width: 100%;
-      margin: 5px 0;
-      border-radius: 10px;
-      position: relative;
-      cursor: pointer;
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      margin: 0 5px;
 
-      img {
+      .media-wrapper {
         width: 100%;
+        margin: 5px 0;
         border-radius: 10px;
-        object-fit: cover;
-      }
+        position: relative;
+        cursor: pointer;
 
-      video {
-        width: 100%;
-        border-radius: 10px;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+        img {
+          width: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        video {
+          width: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
     }
   }
@@ -54,8 +59,8 @@
       height: 24px;
       width: 24px;
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 20px;
+      right: 20px;
       cursor: pointer;
       transition: 0.3s ease-out transform;
       opacity: 0.2;
@@ -72,10 +77,10 @@
       }
 
       iframe {
-        border-radius: 40px;
+        border-radius: 20px;
+        border: none;
       }
     }
-
   }
 }
 

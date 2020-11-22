@@ -59,7 +59,10 @@ const MediaCell = (props) => {
     return (<div class={style['media-wrapper']}
                  onMouseEnter={onHover}
                  onMouseLeave={onLeave}
-                 onClick={() => props.handleClick(media)}>
+                 onClick={() => {
+                     props.handleClick(media);
+                     setVideoVisibility(false);
+                 }}>
         <img alt="adverts" src={image} />
         {(isVideoVisible && media.isVideo) &&
         <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop />}
@@ -72,12 +75,15 @@ const Adverts = () => {
         setPreviewMedia(media);
     };
     return <div class={style.parent}>
-        {adverts.map(it =>
-            <div class={style.column}>
-                {it.map(media => <MediaCell media={media} handleClick={onClicked} />)}
-            </div>
-        )}
-        {previewMedia && <Preview
+        <div class={style['scroll-container']}>
+            {adverts.map(it =>
+                <div class={style.column}>
+                    {it.map(media => <MediaCell media={media} handleClick={onClicked} />)}
+                </div>
+            )}
+        </div>
+        {previewMedia &&
+        <Preview
             media={previewMedia}
             onCancelClicked={() => setPreviewMedia(undefined)} />}
     </div>
