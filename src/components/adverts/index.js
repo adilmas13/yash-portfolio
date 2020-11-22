@@ -2,6 +2,9 @@
 import React from "preact";
 import style from './style.css';
 
+const MediaCell = (media) => {
+   return( <img alt="adverts" src={"assets/" + media.image} />)
+};
 const Adverts = () => {
     const data = [
         [
@@ -44,11 +47,11 @@ const Adverts = () => {
         ]
     ];
     return <div class={style.parent}>
-            {data.map(it => {
-                return <div class={style.column}>
-                    {it.map(ad => <img src={"assets/" + ad.image} />)}
+            {data.map(it =>
+                 <div class={style.column}>
+                    {it.map(media => MediaCell(media))}
                 </div>
-            })}
+            )}
     </div>
 };
 
