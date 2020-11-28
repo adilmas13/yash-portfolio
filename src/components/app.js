@@ -1,6 +1,6 @@
 import Adverts from "./adverts";
 import Router from "preact-router";
-import AboutMe from "./home";
+import AboutMe from "./about-me";
 
 const App = () => {
     return <Router>
