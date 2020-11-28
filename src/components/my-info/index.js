@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import style from './style.css';
 
-const AboutMe = () => {
+const MyInfo = () => {
     const details = {
         name: 'yash',
         age: '29',
@@ -56,4 +56,4 @@ const AboutMe = () => {
     </div>
 };
 
-export default AboutMe;
+export default MyInfo;

@@ -1,10 +1,10 @@
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import AboutMe from "../about-me";
+import MyInfo from "../my-info";
 import Experience from "../experience";
 import Literacy from "../literacy";
 
-const Home = () => {
+const AboutMe = () => {
     const [pageNo, setPageNo] = useState(0);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Home = () => {
     return <div id="app">
         <div class={style.wrapper}>
             <div class={style["scroll-container"]} id="scroller">
-                <AboutMe />
+                <MyInfo />
                 <Experience />
                 <Literacy />
             </div>
@@ -33,4 +33,4 @@ const Home = () => {
     </div>
 }
 
-export default Home;
+export default AboutMe;

@@ -1,10 +1,10 @@
 import Adverts from "./adverts";
 import Router from "preact-router";
-import Home from "./home";
+import AboutMe from "./home";
 
 const App = () => {
     return <Router>
-        <Home default path="/home" />
+        <AboutMe default path="/about-me" />
         <Adverts path="/adverts" />
     </Router>
 }
