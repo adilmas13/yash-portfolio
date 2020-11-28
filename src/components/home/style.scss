@@ -6,7 +6,7 @@
   .scroll-container {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: scroll;
+    overflow: hidden;
     width: 100vw;
   }
 
