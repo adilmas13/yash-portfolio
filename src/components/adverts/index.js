@@ -45,17 +45,36 @@ const MediaCell = (props) => {
     const [isVideoVisible, setVideoVisibility] = useState(false);
     const onHover = (evt) => {
         evt.stopPropagation();
+        props.onCellEnter();
         timeOutId = setTimeout(() => {
             setVideoVisibility(true);
         }, 400)
     };
     const onLeave = (evt) => {
         evt.stopPropagation();
+        props.onCellLeave();
         if (timeOutId) {
             clearTimeout(timeOutId);
         }
         setVideoVisibility(false);
     };
+
+    let overlayStyle = {
+        position: 'absolute',
+        borderRadius: '10px',
+        backgroundColor: 'black',
+        opacity: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        transition: '0.3s ease-out all',
+        userSelect: 'none'
+    }
+
+    if (props.isActive) {
+        overlayStyle = {...overlayStyle, ...{opacity: 0.35}}
+    }
     return (<div class={style['media-wrapper']}
                  onMouseEnter={onHover}
                  onMouseLeave={onLeave}
@@ -66,19 +85,32 @@ const MediaCell = (props) => {
         <img alt="adverts" src={image} />
         {(isVideoVisible && media.isVideo) &&
         <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop />}
+        <div style={overlayStyle} />
     </div>)
 };
 
 const Adverts = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
+    const [activeCell, setActiveCell] = useState(undefined);
     const onClicked = (media) => {
         setPreviewMedia(media);
+    };
+    const onCellEnter = media => {
+        setActiveCell(media)
+    };
+    const onCellLeave = () => {
+        setActiveCell(undefined);
     };
     return <div class={style.parent}>
         <div class={style['scroll-container']}>
             {adverts.map(it =>
                 <div class={style.column}>
-                    {it.map(media => <MediaCell media={media} handleClick={onClicked} />)}
+                    {it.map(media => <MediaCell
+                        media={media} handleClick={onClicked}
+                        isActive={activeCell && activeCell.groupId === media.groupId && activeCell.image !== media.image}
+                        onCellEnter={() => onCellEnter(media)}
+                        onCellLeave={() => onCellLeave()} />)
+                    }
                 </div>
             )}
         </div>

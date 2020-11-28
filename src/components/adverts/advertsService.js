@@ -20,7 +20,7 @@ export const adverts = [
         {image: 'jeep5', isVideo: false, groupId: 11, ratio: "16:9"},
         {image: 'jeep9', isVideo: false, groupId: 11, ratio: "16:9"},
     ], [
-        {image: 'stayfree2', isVideo: true, groupId: 2, ratio: "16:9",  videoId: "khlgJP1sICE"},
+        {image: 'stayfree2', isVideo: true, groupId: 12, ratio: "16:9",  videoId: "khlgJP1sICE"},
         {image: 'vw2', isVideo: false, groupId: 4, ratio: "16:9"},
         {image: 'md3', isVideo: false, groupId: 5, ratio: "9:16"},
         {image: 'cor4', isVideo: false, groupId: 6, ratio: "9:16"},
