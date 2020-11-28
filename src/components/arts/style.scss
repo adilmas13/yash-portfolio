@@ -1,0 +1,13 @@
+@import "../../assets/styles/colors";
+
+.parent {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  font-size: 50px;
+  font-weight: 500;
+}
+
