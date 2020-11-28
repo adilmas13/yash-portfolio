@@ -1,19 +1,33 @@
-import Adverts from "./adverts";
 import Router from "preact-router";
-import AboutMe from "./about-me";
-import Home from "./home";
-import Arts from "./arts";
-import Awards from "./awards";
-import React from "preact";
+import AsyncRoute from 'preact-async-route';
 
-const App = () => {
-    return <Router>
-        <Home path="/home" />
-        <AboutMe default path="/about-me" />
-        <Adverts path="/adverts" />
-        <Arts path="/arts" />
-        <Awards path="/awards" />
+const App = () =>
+    <Router>
+        <AsyncRoute
+            path="/home"
+            getComponent={() => import('./home/index').then(module => module.default)}
+            loading={() => <div>loading...</div>}
+        />
+        <AsyncRoute
+            default
+            path="/about-me"
+            getComponent={() => import('./about-me/index').then(module => module.default)}
+            loading={() => <div>loading...</div>}
+        />
+        <AsyncRoute
+            path="/adverts"
+            getComponent={() => import('./adverts/index').then(module => module.default)}
+            loading={() => <div>loading...</div>} />
+        <AsyncRoute
+            path="/arts"
+            getComponent={() => import('./arts/index').then(module => module.default)}
+            loading={() => <div>loading...</div>} />
+        <AsyncRoute
+            path="/awards"
+            getComponent={() => import('./awards/index').then(module => module.default)}
+            loading={() => <div>loading...</div>}
+        />
     </Router>
-}
+
 
 export default App;
