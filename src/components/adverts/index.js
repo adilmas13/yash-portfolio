@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import style from './style.css';
-import {useState} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import {adverts} from "./advertsService";
 
 const Preview = (props) => {
@@ -40,23 +40,17 @@ const Preview = (props) => {
 
 const MediaCell = (props) => {
     const media = props.media;
-    let timeOutId = null;
+
     const image = `assets/${media.image}.jpg`;
     const [isVideoVisible, setVideoVisibility] = useState(false);
+
     const onHover = (evt) => {
         evt.stopPropagation();
         props.onCellEnter();
-        timeOutId = setTimeout(() => {
-            setVideoVisibility(true);
-        }, 400)
     };
     const onLeave = (evt) => {
         evt.stopPropagation();
         props.onCellLeave();
-        if (timeOutId) {
-            clearTimeout(timeOutId);
-        }
-        setVideoVisibility(false);
     };
 
     let overlayStyle = {
@@ -75,6 +69,22 @@ const MediaCell = (props) => {
     if (props.isActive) {
         overlayStyle = {...overlayStyle, ...{opacity: 0.35}}
     }
+
+    useEffect(() => {
+        let timeOutId;
+        if (props.activeMedia && props.media.id === props.activeMedia.id) {
+            timeOutId = setTimeout(() => {
+                setVideoVisibility(true);
+            }, 400)
+        }
+        return () => {
+            if (timeOutId) {
+                clearTimeout(timeOutId);
+            }
+            setVideoVisibility(false);
+        }
+    }, [props.activeMedia])
+
     return (<div class={style['media-wrapper']}
                  onMouseEnter={onHover}
                  onMouseLeave={onLeave}
@@ -83,33 +93,36 @@ const MediaCell = (props) => {
                      setVideoVisibility(false);
                  }}>
         <img alt="adverts" src={image} />
+        <div style={overlayStyle} />
         {(isVideoVisible && media.isVideo) &&
         <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop />}
-        <div style={overlayStyle} />
     </div>)
 };
 
 const Adverts = () => {
+
     const [previewMedia, setPreviewMedia] = useState(undefined);
-    const [activeCell, setActiveCell] = useState(undefined);
-    const onClicked = (media) => {
-        setPreviewMedia(media);
-    };
-    const onCellEnter = media => {
-        setActiveCell(media)
-    };
-    const onCellLeave = () => {
-        setActiveCell(undefined);
-    };
+    const [activeMedia, setActiveMedia] = useState(undefined);
+
+    const onClicked = (media) => setPreviewMedia(media);
+
+    const onCellEnter = media => setActiveMedia(media);
+
+    const onCellLeave = () => setActiveMedia(undefined);
+
     return <div class={style.parent}>
         <div class={style['scroll-container']}>
             {adverts.map(it =>
                 <div class={style.column}>
-                    {it.map(media => <MediaCell
-                        media={media} handleClick={onClicked}
-                        isActive={activeCell && activeCell.groupId === media.groupId && activeCell.image !== media.image}
-                        onCellEnter={() => onCellEnter(media)}
-                        onCellLeave={() => onCellLeave()} />)
+                    {it.map(media =>
+                        <MediaCell
+                            media={media}
+                            handleClick={onClicked}
+                            onCellEnter={() => onCellEnter(media)}
+                            onCellLeave={() => onCellLeave()}
+                            activeMedia={activeMedia}
+                            isActive={activeMedia && activeMedia.groupId === media.groupId && activeMedia.image !== media.image}
+                        />)
                     }
                 </div>
             )}
