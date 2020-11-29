@@ -1,11 +1,15 @@
 .wrapper {
-  position: relative; }
-  .wrapper .scroll-container {
+    position: relative;
+}
+
+.wrapper .scroll-container {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    width: 100vw; }
-  .wrapper .left {
+    width: 100vw;
+}
+
+.wrapper .left {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -13,8 +17,10 @@
     color: #000000;
     font-size: 18px;
     letter-spacing: 1px;
-    cursor: pointer; }
-  .wrapper .right {
+    cursor: pointer;
+}
+
+.wrapper .right {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -22,6 +28,7 @@
     color: #000000;
     font-size: 18px;
     letter-spacing: 1px;
-    cursor: pointer; }
+    cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */
