@@ -2,7 +2,7 @@
 import React from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import {advertsThumbnail} from "../../utils/imgService";
+import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
 
 const Preview = (props) => {
     const media = props.media;
@@ -41,7 +41,18 @@ const Preview = (props) => {
 const MediaCell = (props) => {
     const media = props.media;
 
-    const image = advertsThumbnail(media.image);
+    let image;
+    let video;
+    switch(props.type){
+        case "adverts":
+            image = advertsThumbnail(media.image)
+            video = advertsThumbnail(media.image, "mp4")
+            break;
+        case "arts":
+            image = artsThumbnail(media.image)
+            video = artsThumbnail(media.image, "mp4")
+            break;
+    }
     const [isVideoVisible, setVideoVisibility] = useState(false);
 
     const onHover = (evt) => {
@@ -100,7 +111,14 @@ const MediaCell = (props) => {
     </div>)
 };
 
+// config = {
+//      data: {},
+//      type: "adverts" | "arts"
+// }
 const CommonListing = (props) => {
+    const config = props.config;
+    const data = config.data;
+    const type = config.type;
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
 
@@ -112,11 +130,12 @@ const CommonListing = (props) => {
 
     return <div class={style.parent}>
         <div class={style['scroll-container']}>
-            {props.data.map(it =>
+            {data.map(it =>
                 <div class={style.column}>
                     {it.map(media =>
                         <MediaCell
                             media={media}
+                            type={type}
                             handleClick={onClicked}
                             onCellEnter={() => onCellEnter(media)}
                             onCellLeave={() => onCellLeave()}

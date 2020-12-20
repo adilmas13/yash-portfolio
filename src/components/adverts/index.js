@@ -1,10 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import {adverts} from "./advertsService";
 import CommonListing from "../common";
+import {adverts} from "../../utils/dataService";
 
 const Adverts = () => {
-    return <CommonListing data={adverts} />
+    const config = {
+        data: adverts,
+        type: "adverts"
+    }
+    return <CommonListing config={config} />
 };
 
 export default Adverts;

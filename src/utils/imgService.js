@@ -6,3 +6,7 @@ export const aboutMeImg = (name, extension = "png") => `${IMAGE_BASE_URL}about-m
 export const advertsThumbnail = (name, extension = "jpg") => `${IMAGE_BASE_URL}adverts%2Fthumbnails%2F${name.toString()}.${extension.toString()}?alt=media`
 
 export const advertsOriginal = (name, extension = "jpg") => `${IMAGE_BASE_URL}adverts%2Foriginal%2F${name.toString()}.${extension.toString()}?alt=media`
+
+export const artsThumbnail = (name, extension = "jpg") => `${IMAGE_BASE_URL}arts%2Fthumbnails%2F${name.toString()}.${extension.toString()}?alt=media`
+
+export const artsOriginal = (name, extension = "jpg") => `${IMAGE_BASE_URL}arts%2Foriginal%2F${name.toString()}.${extension.toString()}?alt=media`

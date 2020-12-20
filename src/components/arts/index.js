@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import style from './style.css';
+import CommonListing from "../common";
+import {arts} from "../../utils/dataService";
 
 const Arts = () => {
-    return <div class={style.parent}>
-        Arts page coming soon
-    </div>
+    const config = {
+        data: arts,
+        type: "arts"
+    }
+    return <CommonListing config={config} />
 };
 
 export default Arts;
