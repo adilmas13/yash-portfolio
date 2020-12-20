@@ -27,6 +27,8 @@ const Preview = (props) => {
         width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
     }
 
+    const image = props.data.type === "adverts" ? advertsThumbnail(group[pageNo].image) : artsThumbnail(group[pageNo].image);
+
     return (<div class={style.preview}>
         <img class={style.cancel}
              src="assets/cancel.svg"
@@ -37,7 +39,7 @@ const Preview = (props) => {
                         src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} /> :
                 <img
                     alt="preview"
-                    src={advertsThumbnail(group[pageNo].image)}
+                    src={image}
                     height={height} width={width} />
             }
         </div>
@@ -133,7 +135,8 @@ const CommonListing = (props) => {
     const onClicked = (media) => {
         setPreviewMedia({
             group : data.flatMap(it => it).filter(it => it.groupId === media.groupId),
-            selected: media
+            selected: media,
+            type
         })
     };
 
