@@ -27,7 +27,7 @@ const Preview = (props) => {
              onClick={props.onCancelClicked}
         />
         <div class={style.body}>
-            {props.media.isVideo ?
+            {props.media.videoId ?
                 <iframe width={width} height={height}
                         src={`https://www.youtube.com/embed/${media.videoId}`}>
                 </iframe> :
@@ -96,7 +96,7 @@ const MediaCell = (props) => {
                  }}>
         <img alt="adverts" src={image} />
         <div style={overlayStyle} />
-        {(isVideoVisible && media.isVideo) &&
+        {(isVideoVisible && media.videoId) &&
         <video src={advertsThumbnail(media.image, "mp4")} poster={image} autoplay loop />}
     </div>)
 };
