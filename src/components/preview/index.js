@@ -42,7 +42,7 @@ const Preview = (props) => {
 
     return (<div class={style.preview}>
         <img class={style.cancel}
-             src="assets/cancel.svg"
+             src="assets/back.svg"
              onClick={props.onCancelClicked}
         />
         <div class={style.body}>
