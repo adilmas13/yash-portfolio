@@ -1,10 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import style from './style.css';
+import {awardsThumbnails} from "../../utils/dataService";
+import {awardsThumbnail} from "../../utils/imgService";
 
 const Awards = () => {
     return <div class={style.parent}>
-        Awards page coming soon
+        {awardsThumbnails.map(data => {
+            return <img class={style.cell} src={awardsThumbnail(data.name)} alt="image" />
+        })}
     </div>
 };
 

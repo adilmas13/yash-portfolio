@@ -108,3 +108,17 @@ export const arts = [
         {id: 57, image: 'mcd1', groupId: 8, ratio: "16:9"},
     ]
 ];
+
+export const awardsThumbnails = [
+    {id: 1, name : "1jugnooH"},
+    {id: 2, name : "2ThirdH"},
+    {id: 3, name : "3paraH"},
+    {id: 4, name : "4dislabelH"},
+    {id: 5, name : "5salaamH"},
+    {id: 6, name : "6signalH"},
+    {id: 7, name : "7loveH"},
+    {id: 8, name : "8mercyH"},
+    {id: 9, name : "9hateH"},
+    {id: 10, name : "10jeepH"},
+    {id: 11, name : "11youngH"}
+]

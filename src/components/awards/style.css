@@ -1,12 +1,16 @@
 .parent {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    min-width: 100vw;
-    font-size: 50px;
-    font-weight: 500;
-}
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 40px; }
+  .parent .cell {
+    width: 100%;
+    border-radius: 10px;
+    filter: grayscale(1);
+    cursor: pointer;
+    transition: 0.3s ease-out all; }
+    .parent .cell:hover {
+      filter: grayscale(0); }
 
 /*# sourceMappingURL=style.css.map */
