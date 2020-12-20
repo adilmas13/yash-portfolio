@@ -83,5 +83,27 @@
         border: none;
       }
     }
+
+    .left {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      font-family: Yfx, serif;
+      color: $text-primary-color;
+      font-size: 18px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .right {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      font-family: Yfx, serif;
+      color: $text-primary-color;
+      font-size: 18px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
   }
 }

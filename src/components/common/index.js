@@ -5,17 +5,24 @@ import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
 
 const Preview = (props) => {
-    const media = props.media;
+    const group = props.data.group;
+
+    const [pageNo, setPageNo] = useState(group.findIndex(it => it.id === props.data.selected.id));
+
+    const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
+
+    const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+
     const parentHeight = document.body.clientHeight;
     const parentWidth = document.body.clientWidth;
 
     let width = parentWidth * 0.75;
     let height = 0;
 
-    if (media.ratio === "16:9") {
+    if (group[pageNo].ratio === "16:9") {
         height = width * (9 / 16);
     }
-    if (media.ratio === "9:16") {
+    if (group[pageNo].ratio === "9:16") {
         height = parentHeight * 0.80;
         width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
     }
@@ -26,15 +33,16 @@ const Preview = (props) => {
              onClick={props.onCancelClicked}
         />
         <div class={style.body}>
-            {props.media.videoId ?
-                <iframe width={width} height={height}
-                        src={`https://www.youtube.com/embed/${media.videoId}`}>
-                </iframe> :
+            {group[pageNo].videoId ? <iframe width={width} height={height}
+                        src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} /> :
                 <img
-                    src={advertsThumbnail(media.image)}
+                    alt="preview"
+                    src={advertsThumbnail(group[pageNo].image)}
                     height={height} width={width} />
             }
         </div>
+        {pageNo > 0 && <div class={style.left} onClick={onPrevClicked}>prev</div>}
+        {pageNo < (group.length - 1) && <div class={style.right} onClick={onNextClicked}>next</div>}
     </div>)
 };
 
@@ -122,7 +130,12 @@ const CommonListing = (props) => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
 
-    const onClicked = (media) => setPreviewMedia(media);
+    const onClicked = (media) => {
+        setPreviewMedia({
+            group : data.flatMap(it => it).filter(it => it.groupId === media.groupId),
+            selected: media
+        })
+    };
 
     const onCellEnter = media => setActiveMedia(media);
 
@@ -148,7 +161,7 @@ const CommonListing = (props) => {
         </div>
         {previewMedia &&
         <Preview
-            media={previewMedia}
+            data={previewMedia}
             onCancelClicked={() => setPreviewMedia(undefined)} />}
     </div>
 };
