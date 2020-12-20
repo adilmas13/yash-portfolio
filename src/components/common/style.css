@@ -33,50 +33,5 @@
           position: absolute;
           top: 0;
           left: 0; }
-  .parent .preview {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.9); }
-    .parent .preview .cancel {
-      height: 30px;
-      width: 30px;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      transition: 0.3s ease-out transform;
-      opacity: 0.2; }
-      .parent .preview .cancel:hover {
-        transform: scale(1.1);
-        opacity: 0.5; }
-    .parent .preview .body img {
-      border-radius: 40px; }
-    .parent .preview .body iframe {
-      border-radius: 20px;
-      border: none; }
-    .parent .preview .left {
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      font-family: Yfx, serif;
-      color: #000000;
-      font-size: 18px;
-      letter-spacing: 1px;
-      cursor: pointer; }
-    .parent .preview .right {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      font-family: Yfx, serif;
-      color: #000000;
-      font-size: 18px;
-      letter-spacing: 1px;
-      cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

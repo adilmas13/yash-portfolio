@@ -96,7 +96,7 @@ export const arts = [
     ],
     [
         {id: 47, image: 'bumble5', groupId: 1, ratio: "9:16"},
-        {id: 48, image: 'park1', groupId: 2, ratio: "16:9", videoId : "mRM_W7_eN6I"},
+        {id: 48, image: 'park1', groupId: 2, ratio: "16:9", videoId: "mRM_W7_eN6I"},
         {id: 49, image: 'park7', groupId: 2, ratio: "9:16"},
         {id: 50, image: 'nba2', groupId: 3, ratio: "16:9"},
         {id: 51, image: 'nba7', groupId: 3, ratio: "9:16"},
@@ -110,15 +110,33 @@ export const arts = [
 ];
 
 export const awardsThumbnails = [
-    {id: 1, name : "1jugnooH"},
-    {id: 2, name : "2ThirdH"},
-    {id: 3, name : "3paraH"},
-    {id: 4, name : "4dislabelH"},
-    {id: 5, name : "5salaamH"},
-    {id: 6, name : "6signalH"},
-    {id: 7, name : "7loveH"},
-    {id: 8, name : "8mercyH"},
-    {id: 9, name : "9hateH"},
-    {id: 10, name : "10jeepH"},
-    {id: 11, name : "11youngH"}
+    {id: 1, image: "1jugnooH"},
+    {id: 2, image: "2ThirdH"},
+    {id: 3, image: "3paraH"},
+    {id: 4, image: "4dislabelH"},
+    {id: 5, image: "5salaamH"},
+    {id: 6, image: "6signalH"},
+    {id: 7, image: "7loveH"},
+    {id: 8, image: "8mercyH"},
+    {id: 9, image: "9hateH"},
+    {id: 10, image: "10jeepH"},
+    {id: 11, image: "11youngH"}
+]
+
+export const awardsOriginal = [
+    {id: 1, media: [{image: "", videoId: "NRxbrwi4WTE", ratio: "16:9"}]},
+    {
+        id: 2, media: [
+            {id: 1, image: "1thirdInside", ratio: "16:9"},
+            {id: 29, image: "2thirdInside", ratio: "16:9"},
+            {id: 3, image: "3thirdInside", ratio: "16:9"},
+            {id: 4, image: "4thirdInside", ratio: "16:9"},
+            {id: 5, image: "5thirdInside", ratio: "16:9"},
+            {id: 6, image: "6thirdInside", ratio: "16:9"},
+            {id: 7, image: "7thirdInside", ratio: "16:9"},
+            {id: 8, image: "8thirdInside", ratio: "16:9"},
+            {id: 9, image: "9thirdInside", ratio: "16:9"},
+            {id: 10, image: "10thirdInside", ratio: "16:9"},
+        ]
+    },
 ]
