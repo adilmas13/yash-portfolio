@@ -11,7 +11,7 @@ const Awards = () => {
 
     const onClicked = (media) => {
         setPreviewMedia({
-            group : awardsOriginal.find(it => it.id === media.id).media,
+            group: awardsOriginal.find(it => it.id === media.id).media,
             selected: awardsOriginal.find(it => it.id === media.id).media[0],
             type: "awards"
         })
