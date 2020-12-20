@@ -128,7 +128,7 @@ export const awardsOriginal = [
     {
         id: 2, media: [
             {id: 1, image: "1thirdInside", ratio: "16:9"},
-            {id: 29, image: "2thirdInside", ratio: "16:9"},
+            {id: 2, image: "2thirdInside", ratio: "16:9"},
             {id: 3, image: "3thirdInside", ratio: "16:9"},
             {id: 4, image: "4thirdInside", ratio: "16:9"},
             {id: 5, image: "5thirdInside", ratio: "16:9"},
@@ -137,6 +137,76 @@ export const awardsOriginal = [
             {id: 8, image: "8thirdInside", ratio: "16:9"},
             {id: 9, image: "9thirdInside", ratio: "16:9"},
             {id: 10, image: "10thirdInside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 3, media: [
+            {id: 1, image: "1paraInside", ratio: "16:9"},
+            {id: 2, image: "2paraInside", ratio: "16:9"},
+            {id: 3, image: "3paraInside", ratio: "16:9"},
+            {id: 4, image: "4paraInside", ratio: "16:9"},
+            {id: 5, image: "5paraInside", ratio: "16:9"},
+            {id: 6, image: "6paraInside", ratio: "16:9"},
+            {id: 7, image: "7paraInside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 4, media: [
+            {id: 1, image: "", videoId: "IhgTAt8Z3aY", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 5, media: [
+            {id: 1, image: "", videoId: "YiGkVg9oUpA", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 6, media: [
+            {id: 1, image: "", videoId: "HkA7oioz4b8", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 7, media: [
+            {id: 1, image: "1loveinside", ratio: "16:9"},
+            {id: 2, image: "2loveinside", ratio: "16:9"},
+            {id: 3, image: "3loveinside", ratio: "16:9"},
+            {id: 4, image: "4loveinside", ratio: "16:9"},
+            {id: 5, image: "5loveinside", ratio: "16:9"},
+            {id: 6, image: "6loveinside", ratio: "16:9"},
+            {id: 7, image: "7loveinside", ratio: "16:9"},
+            {id: 8, image: "8loveinside", ratio: "16:9"},
+            {id: 9, image: "9loveinside", ratio: "16:9"},
+            {id: 10, image: "10loveinside", ratio: "16:9"},
+            {id: 11, image: "10loveinside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 8, media: [
+            {id: 1, image: "1mercyInside", ratio: "16:9"},
+            {id: 2, image: "2mercyInside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 9, media: [
+            {id: 1, image: "1hateinside", ratio: "16:9"},
+            {id: 2, image: "2hateinside", ratio: "16:9"},
+            {id: 3, image: "3hateinside", ratio: "16:9"},
+            {id: 4, image: "4hateinside", ratio: "16:9"},
+            {id: 5, image: "5hateinside", ratio: "16:9"},
+            {id: 6, image: "6hateinside", ratio: "16:9"},
+            {id: 7, image: "7hateinside", ratio: "16:9"},
+            {id: 8, image: "8hateinside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 10, media: [
+            {id: 1, image: "1jeepInside", ratio: "16:9"},
+        ]
+    },
+    {
+        id: 11, media: [
+            {id: 1, image: "", videoId: "XjAWoUc4Aj4", ratio: "16:9"},
+            {id: 2, image: "", videoId: "4txgs7qIgGo", ratio: "16:9"},
         ]
     },
 ]
