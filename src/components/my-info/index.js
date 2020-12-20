@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import style from './style.css';
+import {aboutMeImg} from "../../utils/imgService";
 
 const MyInfo = () => {
     const details = {
@@ -19,8 +20,8 @@ const MyInfo = () => {
 
     return <div class={style.parent}>
         <div style="position: relative; height: 100%; margin-right: 3.5rem">
-            <img src="assets/about_shadow.png" alt="yash-shadow" class={style['main-image']} />
-            <img src="assets/about.png" alt="yash" class={style['main-image']}
+            <img src={aboutMeImg("about_shadow")} alt="yash-shadow" class={style['main-image']} />
+            <img src={aboutMeImg("about")} alt="yash" class={style['main-image']}
                  style="position: absolute; right: 10px" />
         </div>
         <div class={style['details-wrapper']}>

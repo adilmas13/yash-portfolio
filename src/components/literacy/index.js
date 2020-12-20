@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import style from './style.css';
+import {aboutMeImg} from "../../utils/imgService";
 
 const Literacy = () => {
     const data = [
@@ -13,8 +14,8 @@ const Literacy = () => {
     ];
     return <div class={style.parent}>
         <div style="position: relative; height: 100%; margin-right: 3.5rem">
-            <img src="assets/literacy_shadow.png" alt="yash-shadow" class={style['main-image']} />
-            <img src="assets/literacy.png" alt="yash" class={style['main-image']}
+            <img src={aboutMeImg("literacy_shadow")} alt="yash-shadow" class={style['main-image']} />
+            <img src={aboutMeImg("literacy")} alt="yash" class={style['main-image']}
                  style="position: absolute; right: 10px" />
         </div>
         <div class={style['details-wrapper']}>
