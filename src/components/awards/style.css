@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 300px 300px 300px;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   padding-top: 40px; }
   .parent .cell {
     width: 100%;
