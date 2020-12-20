@@ -1,5 +1,5 @@
 import {useState} from "preact/hooks";
-import {advertsThumbnail, artsThumbnail, awardsOriginal, awardsThumbnail} from "../../utils/imgService";
+import {advertsThumbnail, artsThumbnail, awardsOriginal} from "../../utils/imgService";
 import style from "./style.css";
 
 const Preview = (props) => {

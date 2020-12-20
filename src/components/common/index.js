@@ -11,7 +11,7 @@ const MediaCell = (props) => {
 
     let image;
     let video;
-    switch(props.type){
+    switch (props.type) {
         case "adverts":
             image = advertsThumbnail(media.image)
             video = advertsThumbnail(media.image, "mp4")
@@ -92,7 +92,7 @@ const CommonListing = (props) => {
 
     const onClicked = (media) => {
         setPreviewMedia({
-            group : data.flatMap(it => it).filter(it => it.groupId === media.groupId),
+            group: data.flatMap(it => it).filter(it => it.groupId === media.groupId),
             selected: media,
             type
         })
