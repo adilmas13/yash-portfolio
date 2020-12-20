@@ -3,6 +3,7 @@ import React from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {adverts} from "./advertsService";
+import {advertsThumbnail} from "../../utils/imgService";
 
 const Preview = (props) => {
     const media = props.media;
@@ -31,7 +32,7 @@ const Preview = (props) => {
                         src={`https://www.youtube.com/embed/${media.videoId}`}>
                 </iframe> :
                 <img
-                    src={`assets/${media.image}.jpg`}
+                    src={advertsThumbnail(media.image)}
                     height={height} width={width} />
             }
         </div>
@@ -41,13 +42,14 @@ const Preview = (props) => {
 const MediaCell = (props) => {
     const media = props.media;
 
-    const image = `assets/${media.image}.jpg`;
+    const image = advertsThumbnail(media.image);
     const [isVideoVisible, setVideoVisibility] = useState(false);
 
     const onHover = (evt) => {
         evt.stopPropagation();
         props.onCellEnter();
     };
+
     const onLeave = (evt) => {
         evt.stopPropagation();
         props.onCellLeave();
@@ -95,7 +97,7 @@ const MediaCell = (props) => {
         <img alt="adverts" src={image} />
         <div style={overlayStyle} />
         {(isVideoVisible && media.isVideo) &&
-        <video src={`assets/${media.image}.mp4`} poster={image} autoplay loop />}
+        <video src={advertsThumbnail(media.image, "mp4")} poster={image} autoplay loop />}
     </div>)
 };
 
