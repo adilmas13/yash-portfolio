@@ -1,11 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import style from './style.css';
 import {aboutMeImg} from "../../utils/imgService";
+import {getAge} from "../../utils/calculationService";
 
 const MyInfo = () => {
     const details = {
         name: 'yash',
-        age: '29',
+        age: getAge("12/22/1992"),
         designation: 'senior art director',
         contact: '+91-8080606226',
         email: 'yash.ambre92@gmail.com',
