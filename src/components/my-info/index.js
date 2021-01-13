@@ -6,7 +6,7 @@ import {getAge} from "../../utils/calculationService";
 const MyInfo = () => {
     const details = {
         name: 'yash',
-        age: getAge("12/22/1992"),
+        age: getAge("12/22/1991"),
         designation: 'senior art director',
         contact: '+91-8080606226',
         email: 'yash.ambre92@gmail.com',
