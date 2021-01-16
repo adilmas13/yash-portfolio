@@ -210,3 +210,18 @@ export const awardsOriginal = [
         ]
     },
 ]
+
+export const slotVideos = [
+    "1_Ambre_First.mp4",
+    "2_About_Down.mp4",
+    "3_Awards_Down.mp4",
+    "4_Adverts_Down.mp4",
+    "5_Art_Last.mp4",
+]
+
+export const slotVideosReverse = [
+    "9_Reverse_Ambre_Up.mp4",
+    "8_Reverse_About_Up.mp4",
+    "7_Reverse_Awards_Up.mp4",
+    "6_Reverse_Adverts.mp4",
+]
