@@ -3,6 +3,7 @@ import React, {createRef} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {slotVideos, slotVideosReverse} from "../../utils/dataService";
+import {route} from "preact-router";
 
 
 const Designation = () => <div class={style.designation}>
@@ -43,7 +44,23 @@ const SlotMachine = (props) => {
         }
     }, [props.position])
 
-    return <div class={style.slot} ref={slotsRef}>
+    const redirect = () => {
+        switch (props.position) {
+            case 1 :
+                route("/about-me")
+                break;
+            case 2 :
+                route("/awards")
+                break;
+            case 3 :
+                route("/adverts")
+                break;
+            case 4 :
+                route("/arts")
+                break;
+        }
+    }
+    return <div class={style.slot} ref={slotsRef} onClick={() => redirect()}>
         <div class={style.column} />
         <div class={style.column} />
         <div class={style.column} />
@@ -103,7 +120,8 @@ const Home = () => {
             <div class={style["slot-container"]}>
                 {action.position > 0 && <img class={style.arrow} src={"assets/arrow.svg"} onClick={onPreviousClick} />}
                 <SlotMachine position={action.position} />
-                {action.position < 4 && <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={onNextClicked} />}
+                {action.position < 4 &&
+                <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={onNextClicked} />}
             </div>
         </div>
     </div>

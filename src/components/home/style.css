@@ -52,7 +52,8 @@
         overflow: hidden;
         font-size: 80px;
         font-family: Yfx, serif;
-        display: flex; }
+        display: flex;
+        cursor: pointer; }
         .parent .center-wrapper .slot-container .slot .column {
           display: flex;
           flex-direction: column;

@@ -8,8 +8,8 @@ import Awards from "./awards";
 
 const App = () =>
     <Router>
-        <Home path="home" />
-        <AboutMe default path="about-me" />
+        <Home default path="home" />
+        <AboutMe path="about-me" />
         <Adverts path="adverts" />
         <Arts path="arts" />
         <Awards path="awards" />
