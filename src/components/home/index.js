@@ -11,11 +11,11 @@ const Designation = () => <div class={style.designation}>
     <div class={style.text}>DIRECTOR</div>
 </div>;
 
-const SlotMachine = () => {
+const SlotMachine = (props) => {
     return <div class={style["slot-container"]}>
-        <img class={style.arrow} src={"assets/arrow.svg"} />
+        <img class={style.arrow} src={"assets/arrow.svg"} onClick={props.onNext} />
         <div class={style.slot}>MBRE</div>
-        <img class={style["down-arrow"]} src={"assets/arrow.svg"} />
+        <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={props.onPrevious} />
     </div>
 }
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
         const video = videoRef.current
         video.pause()
         video.src = `assets/videos/${src}`
-        //   video.play()
+        video.play()
     }
 
     const onNextClicked = () => {
@@ -60,11 +60,11 @@ const Home = () => {
         <div class={style["center-wrapper"]}>
             <div class={style["yash-text"]}>yash</div>
             <div class={style["video-designation-wrapper"]}>
-                <video src={"assets/videos/1_Ambre_First.mp4"} preload />
+                <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload />
                 <Designation />
             </div>
             <div class={style["a-text"]}>A</div>
-            <SlotMachine />
+            <SlotMachine onNext={() => onNextClicked()} onPrevious={() => onPreviousClick()} />
         </div>
     </div>
 };
