@@ -5,8 +5,18 @@ import {useEffect, useState} from "preact/hooks";
 import {slotVideos, slotVideosReverse} from "../../utils/dataService";
 
 
+const Designation = () => <div class={style.designation}>
+    <div class={style.text}>SENIOR</div>
+    <div class={style.text}>ART</div>
+    <div class={style.text}>DIRECTOR</div>
+</div>;
+
 const SlotMachine = () => {
-    return <div class={style["slot-container"]} />
+    return <div class={style["slot-container"]}>
+        <img class={style.arrow} src={"assets/arrow.svg"} />
+        <div class={style.slot}>MBRE</div>
+        <img class={style["down-arrow"]} src={"assets/arrow.svg"} />
+    </div>
 }
 const Home = () => {
     const [action, setAction] = useState({
@@ -19,7 +29,7 @@ const Home = () => {
         const video = videoRef.current
         video.pause()
         video.src = `assets/videos/${src}`
-        video.play()
+        //   video.play()
     }
 
     const onNextClicked = () => {
@@ -41,18 +51,20 @@ const Home = () => {
     }
 
     useEffect(() => {
-        console.log(action)
         const direction = action.direction;
         const position = action.position;
         playVideo(direction === "next" ? slotVideos[position] : slotVideosReverse[position])
     }, [action])
 
     return <div class={style.parent}>
-        <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} autoplay />
-        <div class={style["slot-wrapper"]}>
-            {action.position > 0 && <div onClick={onPreviousClick}>Previous</div>}
+        <div class={style["center-wrapper"]}>
+            <div class={style["yash-text"]}>yash</div>
+            <div class={style["video-designation-wrapper"]}>
+                <video src={"assets/videos/1_Ambre_First.mp4"} preload />
+                <Designation />
+            </div>
+            <div class={style["a-text"]}>A</div>
             <SlotMachine />
-            {action.position < 4 && <div onClick={onNextClicked}>Next</div>}
         </div>
     </div>
 };

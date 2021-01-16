@@ -3,18 +3,63 @@
   position: relative;
   height: 100vh;
   justify-content: center;
-  align-items: center;
-  min-width: 100vw; }
-  .parent video {
-    width: 250px;
-    height: 250px; }
-  .parent .slot-wrapper {
+  min-width: 100vw;
+  padding-top: 200px; }
+  .parent .center-wrapper {
+    height: 270px;
+    width: 600px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .parent .slot-wrapper .slot-container {
-      width: 500px;
-      height: 250px;
-      border: 1px solid #ccc; }
+    align-items: center;
+    justify-content: center; }
+    .parent .center-wrapper .video-designation-wrapper {
+      height: 100%;
+      width: 250px; }
+      .parent .center-wrapper .video-designation-wrapper video {
+        width: 250px;
+        height: 250px; }
+      .parent .center-wrapper .video-designation-wrapper .designation {
+        width: 100%;
+        font-family: Yfx, serif;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2px; }
+        .parent .center-wrapper .video-designation-wrapper .designation .text {
+          letter-spacing: 1.5px;
+          font-size: 12px; }
+    .parent .center-wrapper .yash-text {
+      font-size: 80px;
+      font-family: Yfx, serif;
+      position: absolute;
+      right: calc(50% + 50px);
+      bottom: 50%;
+      letter-spacing: -3px; }
+    .parent .center-wrapper .a-text {
+      font-size: 80px;
+      font-family: Yfx, serif;
+      position: absolute;
+      left: calc(50% + 55px);
+      bottom: 50%; }
+    .parent .center-wrapper .slot-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      left: calc(50% + 125px);
+      bottom: 50%; }
+      .parent .center-wrapper .slot-container .slot {
+        font-size: 80px;
+        font-family: Yfx, serif; }
+      .parent .center-wrapper .slot-container .arrow {
+        width: 30px;
+        opacity: 0.7;
+        position: absolute;
+        top: -50px; }
+      .parent .center-wrapper .slot-container .down-arrow {
+        width: 30px;
+        opacity: 0.7;
+        position: absolute;
+        transform: rotate(180deg);
+        bottom: -50px; }
 
 /*# sourceMappingURL=style.css.map */
