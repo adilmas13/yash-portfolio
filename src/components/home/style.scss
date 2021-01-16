@@ -65,8 +65,18 @@
       bottom: 50%;
 
       .slot {
+        height: 72px;
+        overflow: hidden;
         font-size: 80px;
         font-family: Yfx, serif;
+        display: flex;
+
+        .column {
+          display: flex;
+          flex-direction: column;
+          width: 70px;
+          transition: all 1s ease-in-out 0s;
+        }
       }
 
       .arrow {
@@ -74,6 +84,7 @@
         opacity: 0.7;
         position: absolute;
         top: -50px;
+        left: 85px;
         cursor: pointer;
       }
 
@@ -83,11 +94,10 @@
         position: absolute;
         transform: rotate(180deg);
         bottom: -50px;
+        left: 85px;
         cursor: pointer;
       }
     }
   }
-
-
 }
 

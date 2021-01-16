@@ -48,13 +48,22 @@
       left: calc(50% + 125px);
       bottom: 50%; }
       .parent .center-wrapper .slot-container .slot {
+        height: 72px;
+        overflow: hidden;
         font-size: 80px;
-        font-family: Yfx, serif; }
+        font-family: Yfx, serif;
+        display: flex; }
+        .parent .center-wrapper .slot-container .slot .column {
+          display: flex;
+          flex-direction: column;
+          width: 70px;
+          transition: all 1s ease-in-out 0s; }
       .parent .center-wrapper .slot-container .arrow {
         width: 30px;
         opacity: 0.7;
         position: absolute;
         top: -50px;
+        left: 85px;
         cursor: pointer; }
       .parent .center-wrapper .slot-container .down-arrow {
         width: 30px;
@@ -62,6 +71,7 @@
         position: absolute;
         transform: rotate(180deg);
         bottom: -50px;
+        left: 85px;
         cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,12 +12,48 @@ const Designation = () => <div class={style.designation}>
 </div>;
 
 const SlotMachine = (props) => {
-    return <div class={style["slot-container"]}>
-        <img class={style.arrow} src={"assets/arrow.svg"} onClick={props.onNext} />
-        <div class={style.slot}>MBRE</div>
-        <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={props.onPrevious} />
+    const slotsRef = createRef()
+    const slots = [
+        "mbre  ",
+        "bout  ",
+        "wards ",
+        "dverts",
+        "rts   "
+    ]
+
+    useEffect(() => {
+        slots.forEach((item) => {
+            const temp = item.split("")
+            temp.forEach((it, index) => {
+                const element = document.createElement("span")
+                element.classList.add("cell");
+                element.innerText = it;
+                slotsRef.current.childNodes[index].appendChild(element)
+            })
+        })
+    }, [])
+
+    useEffect(() => {
+        let children = slotsRef.current.childNodes
+        for (let i = 0; i < children.length; ++i) {
+            const node = children[i];
+            const delay = i * 0.2;
+            node.style.transitionDelay = `${delay}s`;
+            node.style.transform = `translateY(-${72 * props.position}px)`;
+        }
+    }, [props.position])
+
+    return <div class={style.slot} ref={slotsRef}>
+        <div class={style.column} />
+        <div class={style.column} />
+        <div class={style.column} />
+        <div class={style.column} />
+        <div class={style.column} />
+        <div class={style.column} />
     </div>
+
 }
+
 const Home = () => {
     const [action, setAction] = useState({
         position: 0,
@@ -64,7 +100,11 @@ const Home = () => {
                 <Designation />
             </div>
             <div class={style["a-text"]}>A</div>
-            <SlotMachine onNext={() => onNextClicked()} onPrevious={() => onPreviousClick()} />
+            <div class={style["slot-container"]}>
+                {action.position > 0 && <img class={style.arrow} src={"assets/arrow.svg"} onClick={onPreviousClick} />}
+                <SlotMachine position={action.position} />
+                {action.position < 4 && <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={onNextClicked} />}
+            </div>
         </div>
     </div>
 };
