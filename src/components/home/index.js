@@ -62,7 +62,11 @@ const SlotMachine = (props) => {
     }
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
-            <img class={style.arrow} src={"assets/arrow.svg"} />
+            <img
+                style={{visibility: props.position === 0 ? "hidden" : "visible"}}
+                class={style.arrow}
+                src={"assets/arrow.svg"}
+                onClick={() => props.onPreviousClick()} />
             <div class={style["slot-container"]}>
                 <div class={style["a-text"]}>A</div>
                 <div class={style.slot} ref={slotsRef} onClick={() => redirect()}>
@@ -74,7 +78,11 @@ const SlotMachine = (props) => {
                     <div class={style.column} />
                 </div>
             </div>
-            <img class={style["down-arrow"]} src={"assets/arrow.svg"} />
+            <img
+                style={{visibility: props.position < 4 ? "visible" : "hidden"}}
+                class={style["down-arrow"]}
+                src={"assets/arrow.svg"}
+                onClick={() => props.onNextClicked()} />
         </div>
     </div>
 }
@@ -126,7 +134,11 @@ const Home = () => {
             <div class={style["three-layer"]}>
                 <Yash />
                 <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload />
-                <SlotMachine position={action.position} />
+                <SlotMachine
+                    position={action.position}
+                    onNextClicked={() => onNextClicked()}
+                    onPreviousClick={() => onPreviousClick()}
+                />
             </div>
             <Designation />
         </div>
