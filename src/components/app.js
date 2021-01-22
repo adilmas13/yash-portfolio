@@ -14,7 +14,7 @@ const App = () =>
         <Adverts path="adverts" />
         <Arts path="arts" />
         <Awards path="awards" />
-            <Loader path="loader" />
+        <Loader path="loader" />
     </Router>
 
 
