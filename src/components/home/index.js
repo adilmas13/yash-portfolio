@@ -60,16 +60,28 @@ const SlotMachine = (props) => {
                 break;
         }
     }
-    return <div class={style.slot} ref={slotsRef} onClick={() => redirect()}>
-        <div class={style.column} />
-        <div class={style.column} />
-        <div class={style.column} />
-        <div class={style.column} />
-        <div class={style.column} />
-        <div class={style.column} />
+    return <div class={style["slot-wrapper"]}>
+        <div class={style["slot-parent"]}>
+            <img class={style.arrow} src={"assets/arrow.svg"} />
+            <div class={style["slot-container"]}>
+                <div class={style["a-text"]}>A</div>
+                <div class={style.slot} ref={slotsRef} onClick={() => redirect()}>
+                    <div class={style.column} />
+                    <div class={style.column} />
+                    <div class={style.column} />
+                    <div class={style.column} />
+                    <div class={style.column} />
+                    <div class={style.column} />
+                </div>
+            </div>
+            <img class={style["down-arrow"]} src={"assets/arrow.svg"} />
+        </div>
     </div>
-
 }
+
+const Yash = () => <div class={style["yash-text-wrapper"]}>
+    <div class={style["yash-text"]}>yash</div>
+</div>
 
 const Home = () => {
     const [action, setAction] = useState({
@@ -110,19 +122,13 @@ const Home = () => {
     }, [action])
 
     return <div class={style.parent}>
-        <div class={style["center-wrapper"]}>
-            <div class={style["yash-text"]}>yash</div>
-            <div class={style["video-designation-wrapper"]}>
+        <div class={style.body}>
+            <div class={style["three-layer"]}>
+                <Yash />
                 <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload />
-                <Designation />
-            </div>
-            <div class={style["a-text"]}>A</div>
-            <div class={style["slot-container"]}>
-                {action.position > 0 && <img class={style.arrow} src={"assets/arrow.svg"} onClick={onPreviousClick} />}
                 <SlotMachine position={action.position} />
-                {action.position < 4 &&
-                <img class={style["down-arrow"]} src={"assets/arrow.svg"} onClick={onNextClicked} />}
             </div>
+            <Designation />
         </div>
     </div>
 };
