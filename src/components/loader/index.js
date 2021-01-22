@@ -2,18 +2,18 @@
 import React, {createRef} from "preact";
 import style from './style.css';
 import {useEffect} from "preact/hooks";
-import bodymovin from 'bodymovin'
+// import bodymovin from 'bodymovin'
 
 const Loader = () => {
     const ref = createRef()
-    useEffect(() => {
-        bodymovin.loadAnimation({
-            wrapper: ref.current,
-            animType: 'svg',
-            loop: true,
-            path: 'https://labs.nearpod.com/bodymovin/demo/pancakes/data.json'
-        })
-    }, [])
+    // useEffect(() => {
+    //     bodymovin.loadAnimation({
+    //         wrapper: ref.current,
+    //         animType: 'svg',
+    //         loop: true,
+    //         path: 'https://labs.nearpod.com/bodymovin/demo/pancakes/data.json'
+    //     })
+    // }, [])
 
     return <div class={style.parent}>
         <div class={style.loader} ref={ref} />
