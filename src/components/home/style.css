@@ -78,8 +78,21 @@
     height: 100vh;
     width: 100%;
     padding: 0; }
-    .parent .center-wrapper {
-      display: flex;
-      flex-direction: column; } }
+    .parent .body .three-layer {
+      height: auto;
+      flex-direction: column; }
+      .parent .body .three-layer .yash-text-wrapper {
+        position: relative;
+        padding: 0;
+        right: 0; }
+      .parent .body .three-layer .slot-wrapper {
+        position: relative;
+        padding: 0;
+        left: 0; }
+    .parent .body .designation {
+      border-top: 1px solid rgba(0, 0, 0, 0.7);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      margin-top: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

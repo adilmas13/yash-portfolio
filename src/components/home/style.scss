@@ -103,8 +103,6 @@
       }
     }
   }
-
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -115,9 +113,30 @@
     width: 100%;
     padding: 0;
 
-    .center-wrapper {
-      display: flex;
-      flex-direction: column;
+    .body {
+
+      .three-layer {
+        height: auto;
+        flex-direction: column;
+
+        .yash-text-wrapper{
+          position: relative;
+          padding: 0;
+          right: 0;
+        }
+        .slot-wrapper{
+          position: relative;
+          padding: 0;
+          left: 0;
+        }
+      }
+
+      .designation {
+        border-top: 1px solid rgba(0,0,0,0.7);
+        border-bottom: 1px solid rgba(0,0,0,0.7);
+        padding: 10px 0;
+        margin-top: 20px;
+      }
     }
   }
 }
