@@ -46,11 +46,6 @@
               font-family: Yfx, serif;
               display: flex;
               cursor: pointer; }
-              .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot .column {
-                display: flex;
-                flex-direction: column;
-                width: 70px;
-                transition: all 1s ease-in-out 0s; }
           .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
             width: 30px;
             opacity: 0.7;
@@ -103,10 +98,6 @@
             font-size: 10vw; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
               display: none; }
-            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot .column {
-              width: auto; }
-              .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot .column .cell {
-                background: aqua; }
           .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
             margin: 0;
             width: 20px; }

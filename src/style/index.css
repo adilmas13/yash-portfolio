@@ -19,6 +19,13 @@ html, body {
     height: 100%;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    transition: all 1s ease-in-out 0s;
+}
+
 .cell {
     display: flex;
     align-items: center;
@@ -27,8 +34,13 @@ html, body {
     min-height: 72px;
 }
 
-@media only screen and (max-width: 600px){
-    .cell{
+@media only screen and (max-width: 600px) {
 
+    .cell {
+        width: auto;
+    }
+
+    .column {
+        width: auto;
     }
 }

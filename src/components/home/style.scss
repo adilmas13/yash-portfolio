@@ -63,12 +63,6 @@
               display: flex;
               cursor: pointer;
 
-              .column {
-                display: flex;
-                flex-direction: column;
-                width: 70px;
-                transition: all 1s ease-in-out 0s;
-              }
             }
           }
 
@@ -149,15 +143,6 @@
               font-size: 10vw;
               .a-text{
                 display: none;
-              }
-              .slot {
-                .column {
-                  width: auto;
-
-                  .cell {
-                    background: aqua;
-                  }
-                }
               }
             }
 
