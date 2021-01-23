@@ -160,6 +160,7 @@ const Home = () => {
             </div>
             <Designation />
         </div>
+        <div class={style.logo} />
     </div>
 };
 

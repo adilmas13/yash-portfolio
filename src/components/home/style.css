@@ -66,6 +66,14 @@
       .parent .body .designation .text {
         letter-spacing: 1.5px;
         font-size: 12px; }
+  .parent .logo {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 25px); }
 
 @media only screen and (max-width: 600px) {
   .parent {
