@@ -15,7 +15,6 @@ const Awards = () => {
             selected: awardsOriginal.find(it => it.id === media.id).media[0],
             type: "awards"
         })
-        console.log("ut", awardsOriginal.find(it => it.id === media.id).media[0])
     };
 
     return <div class={style.parent}>
