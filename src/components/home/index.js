@@ -14,12 +14,20 @@ const Designation = () => <div class={style.designation}>
 
 const SlotMachine = (props) => {
     const slotsRef = createRef()
+    // const slots = [
+    //     "mbre  ",
+    //     "bout  ",
+    //     "wards ",
+    //     "dverts",
+    //     "rts   "
+    // ]
+
     const slots = [
-        "mbre  ",
-        "bout  ",
-        "wards ",
-        "dverts",
-        "rts   "
+        "-ambre-",
+        "-about-",
+        "-awards",
+        "adverts",
+        "-arts--"
     ]
 
     useEffect(() => {
@@ -35,12 +43,13 @@ const SlotMachine = (props) => {
     }, [])
 
     useEffect(() => {
+        let cellHeight = document.getElementsByClassName("cell")[0].clientHeight;
         let children = slotsRef.current.childNodes
         for (let i = 0; i < children.length; ++i) {
             const node = children[i];
             const delay = i * 0.2;
             node.style.transitionDelay = `${delay}s`;
-            node.style.transform = `translateY(-${72 * props.position}px)`;
+            node.style.transform = `translateY(-${cellHeight * props.position}px)`;
         }
     }, [props.position])
 
@@ -60,6 +69,7 @@ const SlotMachine = (props) => {
                 break;
         }
     }
+
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
             <img
@@ -70,6 +80,7 @@ const SlotMachine = (props) => {
             <div class={style["slot-container"]}>
                 <div class={style["a-text"]}>A</div>
                 <div class={style.slot} ref={slotsRef} onClick={() => redirect()}>
+                    <div class={style.column} />
                     <div class={style.column} />
                     <div class={style.column} />
                     <div class={style.column} />

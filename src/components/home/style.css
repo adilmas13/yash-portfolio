@@ -34,14 +34,15 @@
           display: flex;
           flex-direction: column; }
           .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
-            display: flex; }
+            display: flex;
+            font-size: 80px; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
-              font-size: 80px;
+              display: flex;
+              align-items: center;
               font-family: Yfx, serif; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
               height: 72px;
               overflow: hidden;
-              font-size: 80px;
               font-family: Yfx, serif;
               display: flex;
               cursor: pointer; }
@@ -84,11 +85,34 @@
       .parent .body .three-layer .yash-text-wrapper {
         position: relative;
         padding: 0;
-        right: 0; }
+        right: 0;
+        margin-bottom: 10px; }
+        .parent .body .three-layer .yash-text-wrapper .yash-text {
+          font-size: 10vw;
+          letter-spacing: -1px; }
+      .parent .body .three-layer video {
+        width: 150px;
+        height: 150px; }
       .parent .body .three-layer .slot-wrapper {
         position: relative;
         padding: 0;
         left: 0; }
+        .parent .body .three-layer .slot-wrapper .slot-parent {
+          align-items: center; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
+            font-size: 10vw; }
+            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
+              display: none; }
+            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot .column {
+              width: auto; }
+              .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot .column .cell {
+                background: aqua; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
+            margin: 0;
+            width: 20px; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
+            margin: 0;
+            height: 20px; }
     .parent .body .designation {
       border-top: 1px solid rgba(0, 0, 0, 0.7);
       border-bottom: 1px solid rgba(0, 0, 0, 0.7);

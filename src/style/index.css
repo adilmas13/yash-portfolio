@@ -27,4 +27,8 @@ html, body {
     min-height: 72px;
 }
 
+@media only screen and (max-width: 600px){
+    .cell{
 
+    }
+}
