@@ -144,3 +144,43 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .parent {
+    .image-wrapper {
+      display: none;
+    }
+
+    .right-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .details-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .top-wrapper {
+          width: 100%;
+
+          .header {
+            font-size: 10vw;
+            text-align: center;
+          }
+
+          .time-parent {
+            height: auto;
+            font-family: Yfx, serif;
+          }
+        }
+
+        .middle-wrapper{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
