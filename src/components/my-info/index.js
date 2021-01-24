@@ -20,7 +20,7 @@ const MyInfo = () => {
     };
 
     return <div class={style.parent}>
-        <div style="position: relative; height: 100%; margin-right: 3.5rem">
+        <div class={style["image-wrapper"]}>
             <img src={aboutMeImg("about_shadow")} alt="yash-shadow" class={style['main-image']} />
             <img src={aboutMeImg("about")} alt="yash" class={style['main-image']}
                  style="position: absolute; right: 10px" />
