@@ -7,6 +7,12 @@
   justify-content: flex-end;
   min-width: 100vw;
 
+  .image-wrapper {
+    position: relative;
+    height: 100%;
+    margin-right: 3.5rem
+  }
+
   .details-wrapper {
     position: absolute;
     left: 0;
@@ -103,3 +109,25 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .parent {
+    .image-wrapper {
+      display: none;
+    }
+
+    .details-wrapper {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+
+      .wrapper {
+        .header {
+          font-size: 10vw;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+}

@@ -13,7 +13,7 @@ const Literacy = () => {
         {field: 'ssc', place: 'MAHARASHTRA STATE BOARD'},
     ];
     return <div class={style.parent}>
-        <div style="position: relative; height: 100%; margin-right: 3.5rem">
+        <div class={style["image-wrapper"]}>
             <img src={aboutMeImg("literacy_shadow")} alt="yash-shadow" class={style['main-image']} />
             <img src={aboutMeImg("literacy")} alt="yash" class={style['main-image']}
                  style="position: absolute; right: 10px" />
