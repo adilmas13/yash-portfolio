@@ -151,7 +151,7 @@ const Home = () => {
         <div class={style.body}>
             <div class={style["three-layer"]}>
                 <Yash />
-                <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload />
+                <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload autoplay={true} />
                 <SlotMachine
                     position={action.position}
                     onNextClicked={() => onNextClicked()}
