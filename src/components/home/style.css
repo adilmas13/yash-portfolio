@@ -69,12 +69,23 @@
       .parent .body .designation .text {
         letter-spacing: 1.5px;
         font-size: 12px; }
-  .parent .logo {
-    height: 50px;
-    width: 50px;
+  .parent .logo-wrapper {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 20px;
     left: calc(50% - 25px); }
+    .parent .logo-wrapper .logo {
+      height: 50px;
+      width: 50px; }
+    .parent .logo-wrapper .logo-text {
+      font-size: 12px;
+      font-family: Yfx, serif;
+      font-weight: 200;
+      text-transform: capitalize;
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 3px; }
 
 @media only screen and (max-width: 600px) {
   .parent {
