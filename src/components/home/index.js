@@ -160,7 +160,7 @@ const Home = () => {
             </div>
             <Designation />
         </div>
-        <div class={style.logo} />
+        <img class={style.logo} src={"assets/home_icon.svg"} />
     </div>
 };
 
