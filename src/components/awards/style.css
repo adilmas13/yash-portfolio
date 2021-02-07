@@ -1,26 +1,35 @@
 .parent {
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 40px;
-  position: relative;
-  padding-bottom: 10px; }
-  .parent .cell {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.parent .cell {
     width: 100%;
     border-radius: 10px;
     filter: grayscale(1);
     cursor: pointer;
-    transition: 0.3s ease-out all; }
-    .parent .cell:hover {
-      filter: grayscale(0); }
+    transition: 0.3s ease-out all;
+}
+
+.parent .cell:hover {
+    filter: grayscale(0);
+}
 
 @media only screen and (max-width: 600px) {
-  .parent {
-    grid-template-columns: 90%;
-    padding-top: 20px;
-    gap: 10px; }
+    .parent {
+        grid-template-columns: 90%;
+        padding-top: 20px;
+        gap: 10px;
+    }
+
     .parent .cell {
-      filter: grayscale(0); } }
+        filter: grayscale(0);
+    }
+}
 
 /*# sourceMappingURL=style.css.map */

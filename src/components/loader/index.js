@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {createRef} from "preact";
 import style from './style.css';
-import {useEffect} from "preact/hooks";
 // import bodymovin from 'bodymovin'
 
 const Loader = () => {

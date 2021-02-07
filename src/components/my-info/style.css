@@ -1,16 +1,21 @@
 @import url(../../assets/fonts/fonts.css);
+
 .parent {
-  display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  justify-content: flex-end;
-  min-width: 100vw; }
-  .parent .image-wrapper {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    justify-content: flex-end;
+    min-width: 100vw;
+}
+
+.parent .image-wrapper {
     position: relative;
     height: 100%;
-    margin-right: 3.5rem; }
-  .parent .details-wrapper {
+    margin-right: 3.5rem;
+}
+
+.parent .details-wrapper {
     position: absolute;
     left: 0;
     top: 0;
@@ -19,95 +24,150 @@
     display: flex;
     flex-direction: column;
     padding: 0 8rem;
-    justify-content: space-evenly; }
-    .parent .details-wrapper .top-wrapper {
-      color: #353335; }
-      .parent .details-wrapper .top-wrapper .gender-age {
-        font-size: 6rem;
-        text-transform: capitalize;
-        font-family: Yfx, serif;
-        word-spacing: 20px; }
-      .parent .details-wrapper .top-wrapper .designation {
-        font-size: 3.25rem;
-        text-transform: capitalize;
-        font-family: Yfx, serif;
-        margin-top: 2rem;
-        letter-spacing: 2px; }
-    .parent .details-wrapper .middle-wrapper {
-      color: #000000; }
-      .parent .details-wrapper .middle-wrapper .name {
-        font-family: b-light, serif;
-        font-size: 50px;
-        letter-spacing: 1px; }
-      .parent .details-wrapper .middle-wrapper .noun-success {
-        font-size: 30px; }
-        .parent .details-wrapper .middle-wrapper .noun-success span:first-child {
-          font-family: b-bold-italic, serif; }
-        .parent .details-wrapper .middle-wrapper .noun-success span:last-child {
-          font-family: b-regular-italics, serif; }
-      .parent .details-wrapper .middle-wrapper .description {
-        font-family: b-regular-italics, serif;
-        line-height: 1.5;
-        letter-spacing: 2px;
-        font-size: 18px;
-        margin-top: 1rem; }
-    .parent .details-wrapper .bottom-wrapper {
-      color: #000000; }
-      .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper {
-        display: flex; }
-        .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split {
-          display: flex;
-          flex-direction: column; }
-          .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
-            margin-left: 2rem; }
-          .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:first-child {
-            text-transform: uppercase;
-            font-family: b-bold-italic, serif; }
-          .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
-            font-family: b-regular-italics, serif;
-            font-size: 16px;
-            margin-top: 4px; }
-  .parent .main-image {
-    height: 100%; }
+    justify-content: space-evenly;
+}
+
+.parent .details-wrapper .top-wrapper {
+    color: #353335;
+}
+
+.parent .details-wrapper .top-wrapper .gender-age {
+    font-size: 6rem;
+    text-transform: capitalize;
+    font-family: Yfx, serif;
+    word-spacing: 20px;
+}
+
+.parent .details-wrapper .top-wrapper .designation {
+    font-size: 3.25rem;
+    text-transform: capitalize;
+    font-family: Yfx, serif;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+}
+
+.parent .details-wrapper .middle-wrapper {
+    color: #000000;
+}
+
+.parent .details-wrapper .middle-wrapper .name {
+    font-family: b-light, serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.parent .details-wrapper .middle-wrapper .noun-success {
+    font-size: 30px;
+}
+
+.parent .details-wrapper .middle-wrapper .noun-success span:first-child {
+    font-family: b-bold-italic, serif;
+}
+
+.parent .details-wrapper .middle-wrapper .noun-success span:last-child {
+    font-family: b-regular-italics, serif;
+}
+
+.parent .details-wrapper .middle-wrapper .description {
+    font-family: b-regular-italics, serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 1rem;
+}
+
+.parent .details-wrapper .bottom-wrapper {
+    color: #000000;
+}
+
+.parent .details-wrapper .bottom-wrapper .digits-letters-wrapper {
+    display: flex;
+}
+
+.parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split {
+    display: flex;
+    flex-direction: column;
+}
+
+.parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
+    margin-left: 2rem;
+}
+
+.parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:first-child {
+    text-transform: uppercase;
+    font-family: b-bold-italic, serif;
+}
+
+.parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
+    font-family: b-regular-italics, serif;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.parent .main-image {
+    height: 100%;
+}
 
 @media only screen and (max-width: 600px) {
-  .parent {
-    overflow: hidden; }
+    .parent {
+        overflow: hidden;
+    }
+
     .parent .image-wrapper {
-      display: none; }
+        display: none;
+    }
+
     .parent .details-wrapper {
-      width: 100%;
-      padding: 0;
-      position: relative; }
-      .parent .details-wrapper .top-wrapper {
+        width: 100%;
+        padding: 0;
+        position: relative;
+    }
+
+    .parent .details-wrapper .top-wrapper {
         color: #353335;
         display: flex;
         flex-direction: column;
-        align-items: center; }
-        .parent .details-wrapper .top-wrapper .gender-age {
-          font-size: 12vw;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px; }
-        .parent .details-wrapper .top-wrapper .designation {
-          font-size: 6vw;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          margin-top: 2rem;
-          letter-spacing: 2px; }
-      .parent .details-wrapper .middle-wrapper {
-        color: #000000; }
-        .parent .details-wrapper .middle-wrapper .name {
-          text-align: center;
-          font-size: 14vw; }
-        .parent .details-wrapper .middle-wrapper .noun-success {
-          text-align: center;
-          font-size: 6vw; }
-        .parent .details-wrapper .middle-wrapper .description {
-          text-align: center;
-          font-size: 4vw; }
-      .parent .details-wrapper .bottom-wrapper {
+        align-items: center;
+    }
+
+    .parent .details-wrapper .top-wrapper .gender-age {
+        font-size: 12vw;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        word-spacing: 20px;
+    }
+
+    .parent .details-wrapper .top-wrapper .designation {
+        font-size: 6vw;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        margin-top: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .parent .details-wrapper .middle-wrapper {
+        color: #000000;
+    }
+
+    .parent .details-wrapper .middle-wrapper .name {
+        text-align: center;
+        font-size: 14vw;
+    }
+
+    .parent .details-wrapper .middle-wrapper .noun-success {
+        text-align: center;
+        font-size: 6vw;
+    }
+
+    .parent .details-wrapper .middle-wrapper .description {
+        text-align: center;
+        font-size: 4vw;
+    }
+
+    .parent .details-wrapper .bottom-wrapper {
         display: flex;
-        justify-content: center; } }
+        justify-content: center;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */
