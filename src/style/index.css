@@ -1,3 +1,10 @@
+:root {
+    --cell-width: 65px;
+    --cell-height: 72px;
+    --cell-font-size: 80px;
+    --cell-padding: 5px;
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -22,16 +29,16 @@ html, body {
 .column {
     display: flex;
     flex-direction: column;
-    width: 70px;
+    width: var(--cell-width);
     transition: all 1s ease-in-out 0s;
 }
 
 .cell {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 72px;
+    padding-top: var(--cell-padding);
+    min-height: var(--cell-height);
 }
 
 @media only screen and (max-width: 600px) {

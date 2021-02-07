@@ -20,9 +20,10 @@
         right: calc(50% + 60px);
         padding-bottom: 40px; }
         .parent .body .three-layer .yash-text-wrapper .yash-text {
-          font-size: 80px;
+          font-size: var(--cell-font-size);
           font-family: Yfx, serif;
-          letter-spacing: -3px; }
+          letter-spacing: 4px;
+          height: var(--cell-height); }
       .parent .body .three-layer video {
         width: 250px;
         height: 250px; }
@@ -35,13 +36,15 @@
           flex-direction: column; }
           .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
-            font-size: 80px; }
+            font-size: var(--cell-font-size); }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
               display: flex;
-              align-items: center;
-              font-family: Yfx, serif; }
+              font-family: Yfx, serif;
+              width: var(--cell-width);
+              height: var(--cell-height);
+              padding-top: var(--cell-padding); }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-              height: 72px;
+              height: var(--cell-height);
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
@@ -50,13 +53,13 @@
             width: 30px;
             opacity: 0.7;
             cursor: pointer;
-            margin-left: 31%; }
+            margin-left: 32%; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
             opacity: 0.7;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 31%; }
+            margin-left: 32%; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;
@@ -90,7 +93,7 @@
         margin-bottom: 10px; }
         .parent .body .three-layer .yash-text-wrapper .yash-text {
           font-size: 10vw;
-          letter-spacing: -1px; }
+          letter-spacing: 4px; }
       .parent .body .three-layer video {
         width: 150px;
         height: 150px; }

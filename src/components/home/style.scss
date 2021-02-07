@@ -26,9 +26,10 @@
         padding-bottom: 40px;
 
         .yash-text {
-          font-size: 80px;
+          font-size: var(--cell-font-size);
           font-family: Yfx, serif;
-          letter-spacing: -3px;
+          letter-spacing: 4px;
+          height: var(--cell-height);
         }
       }
 
@@ -48,21 +49,22 @@
 
           .slot-container {
             display: flex;
-            font-size: 80px;
+            font-size: var(--cell-font-size);
 
             .a-text {
               display: flex;
-              align-items: center;
               font-family: Yfx, serif;
+              width: var(--cell-width);
+              height: var(--cell-height);
+              padding-top: var(--cell-padding);
             }
 
             .slot {
-              height: 72px;
+              height: var(--cell-height);
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
               cursor: pointer;
-
             }
           }
 
@@ -70,7 +72,7 @@
             width: 30px;
             opacity: 0.7;
             cursor: pointer;
-            margin-left: 31%;
+            margin-left: 32%;
           }
 
           .down-arrow {
@@ -78,7 +80,7 @@
             opacity: 0.7;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 31%;
+            margin-left: 32%;
           }
         }
       }
@@ -130,7 +132,7 @@
 
           .yash-text {
             font-size: 10vw;
-            letter-spacing: -1px;
+            letter-spacing: 4px;
           }
         }
 
