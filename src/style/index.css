@@ -30,7 +30,7 @@ html, body {
     display: flex;
     flex-direction: column;
     width: var(--cell-width);
-    transition: all 1s ease-in-out 0s;
+
 }
 
 .cell {

@@ -73,6 +73,7 @@
             opacity: 0.7;
             cursor: pointer;
             margin-left: 32%;
+            animation: UpArrowAnim 1s linear infinite;
           }
 
           .down-arrow {
@@ -81,6 +82,7 @@
             transform: rotate(180deg);
             cursor: pointer;
             margin-left: 32%;
+            animation: DownArrowAnim 1s linear infinite;
           }
         }
       }
@@ -192,5 +194,23 @@
         margin-top: 20px;
       }
     }
+  }
+}
+
+@keyframes DownArrowAnim {
+  0%, 100% {
+    transform: translateY(0px) rotate(180deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(180deg);
+  }
+}
+
+@keyframes UpArrowAnim {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

@@ -5,7 +5,6 @@ import {useEffect, useState} from "preact/hooks";
 import {slotVideos, slotVideosReverse} from "../../utils/dataService";
 import {route} from "preact-router";
 
-
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
     <div class={style.text}>ART</div>
@@ -62,8 +61,11 @@ const SlotMachine = (props) => {
         let children = slotsRef.current.childNodes
         for (let i = 0; i < children.length; ++i) {
             const column = children[i];
-            const delay = i * 0.2;
-            column.style.transitionDelay = `${delay}s`;
+            if (props.position === 0) {
+                const delay = i * 0.2;
+                column.style.transition = "all 1s ease-in-out";
+                column.style.transitionDelay = `${delay}s`;
+            }
             column.style.transform = `translateY(-${cellHeight * props.position}px)`;
         }
     }, [props.position])
@@ -85,22 +87,26 @@ const SlotMachine = (props) => {
         }
     }
 
+    const noOp = () => {};
+
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
             <img
-                style={{visibility: props.position === 0 ? "hidden" : "visible"}}
+                id="up_arrow"
+                style={{visibility: (props.position === 0 && props.direction !== "none") ? "hidden" : "visible"}}
                 class={style.arrow}
                 src={"assets/arrow.svg"}
-                onClick={() => props.onPreviousClick()} />
+                onClick={() => props.direction !== "none" ? props.onPreviousClick() : noOp()} />
             <div class={style["slot-container"]}>
                 <div class={style["a-text"]}>A</div>
-                <div class={style.slot} ref={slotsRef} onClick={() => redirect()} />
+                <div class={style.slot} ref={slotsRef} onClick={() => props.direction !== "none" ? redirect() : noOp()} />
             </div>
             <img
-                style={{visibility: props.position < 4 ? "visible" : "hidden"}}
+                id="down_arrow"
+                style={{visibility: (props.position < 4 || props.direction === "none") ? "visible" : "hidden"}}
                 class={style["down-arrow"]}
                 src={"assets/arrow.svg"}
-                onClick={() => props.onNextClicked()} />
+                onClick={() => props.direction !== "none" ? props.onNextClicked() : noOp()} />
         </div>
     </div>
 }
@@ -111,8 +117,8 @@ const Yash = () => <div class={style["yash-text-wrapper"]}>
 
 const Home = () => {
     const [action, setAction] = useState({
-        position: 0,
-        direction: "next"
+        position: 4,
+        direction: "none"
     })
     const videoRef = createRef()
 
@@ -142,9 +148,36 @@ const Home = () => {
     }
 
     useEffect(() => {
+        let innerTimer;
+        const outerTimer = setTimeout(() => {
+            setAction({
+                position: 0,
+                direction: "none"
+            })
+            innerTimer = setTimeout(() => {
+                setAction({
+                    position: 0,
+                    direction: "next"
+                })
+                const downArrow = document.getElementById("down_arrow");
+                if (downArrow) downArrow.style.animation = "none";
+
+                const upArrow = document.getElementById("up_arrow");
+                if (upArrow) upArrow.style.animation = "none";
+            }, 1700)
+        }, 500)
+        return () => {
+            if (innerTimer) clearTimeout(innerTimer);
+            if (outerTimer) clearTimeout(outerTimer);
+        }
+    }, [])
+
+    useEffect(() => {
         const direction = action.direction;
         const position = action.position;
-        playVideo(direction === "next" ? slotVideos[position] : slotVideosReverse[position])
+        if (action.direction !== "none") {
+            playVideo(direction === "next" ? slotVideos[position] : slotVideosReverse[position])
+        }
     }, [action])
 
     return <div class={style.parent}>
@@ -154,6 +187,7 @@ const Home = () => {
                 <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload autoplay={true} />
                 <SlotMachine
                     position={action.position}
+                    direction={action.direction}
                     onNextClicked={() => onNextClicked()}
                     onPreviousClick={() => onPreviousClick()}
                 />
