@@ -6,6 +6,28 @@ import {awardsThumbnail} from "../../utils/imgService";
 import {useState} from "preact/hooks";
 import Preview from "../preview";
 
+const MediaCell = (props) => {
+    const [isImageLoaded, setImageLoaded] = useState(false);
+
+    let cellStyle = {
+        opacity: isImageLoaded ? 1 : 0,
+    }
+
+    let imageWrapperStyle = {
+        backgroundColor: props.media.color || "lightgrey"
+    }
+
+    return <div class={style["image-wrapper"]} style={imageWrapperStyle}>
+        <img
+            class={style.cell}
+            style={cellStyle}
+            src={awardsThumbnail(props.media.image)}
+            alt="image"
+            onLoad={() => setImageLoaded(true)}
+            onClick={() => props.onClicked()}
+        />
+    </div>
+};
 const Awards = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
 
@@ -18,14 +40,7 @@ const Awards = () => {
     };
 
     return <div class={style.parent}>
-        {awardsThumbnails.map(data => {
-            return <img
-                class={style.cell}
-                src={awardsThumbnail(data.image)}
-                alt="image"
-                onClick={() => onClicked(data)}
-            />
-        })}
+        {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
         {previewMedia &&
         <Preview
             data={previewMedia}
