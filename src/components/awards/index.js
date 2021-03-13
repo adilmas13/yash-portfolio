@@ -14,7 +14,7 @@ const MediaCell = (props) => {
     }
 
     let imageWrapperStyle = {
-        backgroundColor: props.media.color || "lightgrey"
+        backgroundColor: `${props.media.color}33` || "lightgrey"
     }
 
     return <div class={style["image-wrapper"]} style={imageWrapperStyle}>

@@ -110,17 +110,17 @@ export const arts = [
 ];
 
 export const awardsThumbnails = [
-    {id: 1, image: "1jugnooH"},
-    {id: 2, image: "2ThirdH"},
-    {id: 3, image: "3paraH"},
-    {id: 4, image: "4dislabelH"},
-    {id: 5, image: "5salaamH"},
-    {id: 6, image: "6signalH"},
-    {id: 7, image: "7loveH"},
-    {id: 8, image: "8mercyH"},
-    {id: 9, image: "9hateH"},
-    {id: 10, image: "10jeepH"},
-    {id: 11, image: "11youngH"}
+    {id: 1, image: "1jugnooH", color: "#f2fc75"},
+    {id: 2, image: "2ThirdH", color: "#e9c44a"},
+    {id: 3, image: "3paraH", color: "#fae04c"},
+    {id: 4, image: "4dislabelH", color: "#71f8fa"},
+    {id: 5, image: "5salaamH", color: "#D5D361"},
+    {id: 6, image: "6signalH", color: "#52a076"},
+    {id: 7, image: "7loveH", color: "#CBa43b"},
+    {id: 8, image: "8mercyH", color: "#9f2d33"},
+    {id: 9, image: "9hateH", color: "#771d1c"},
+    {id: 10, image: "10jeepH", color: "#d3693b"},
+    {id: 11, image: "11youngH", color: "#f2fc75"}
 ]
 
 export const awardsOriginal = [
