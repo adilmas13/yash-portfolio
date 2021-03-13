@@ -22,6 +22,7 @@ const MediaCell = (props) => {
             break;
     }
     const [isVideoVisible, setVideoVisibility] = useState(false);
+    const [isImageLoaded, setImageLoaded] = useState(false);
 
     const onHover = (evt) => {
         evt.stopPropagation();
@@ -46,6 +47,11 @@ const MediaCell = (props) => {
         userSelect: 'none'
     }
 
+    let cellStyle = {
+        minHeight : props.media.ratio === "16:9" ? "115px" : "285px",
+        backgroundColor: props.media.color || "lightgrey"
+    }
+
     if (props.isActive) {
         overlayStyle = {...overlayStyle, ...{opacity: 0.35}}
     }
@@ -66,13 +72,16 @@ const MediaCell = (props) => {
     }, [props.activeMedia])
 
     return (<div class={style['media-wrapper']}
+                 style={cellStyle}
                  onMouseEnter={onHover}
                  onMouseLeave={onLeave}
                  onClick={() => {
                      props.handleClick(media);
                      setVideoVisibility(false);
                  }}>
-        <img alt="adverts" src={image} />
+        <img
+            class={isImageLoaded ? style["visible"] : style["hidden"]}
+            alt="adverts" src={image} onLoad={() => setImageLoaded(true)} />
         <div style={overlayStyle} />
         {(isVideoVisible && media.videoId) &&
         <video src={advertsThumbnail(media.image, "mp4")} poster={image} autoplay loop />}

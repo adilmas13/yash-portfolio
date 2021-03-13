@@ -27,7 +27,7 @@
     height: 100%;
     width: 100%; }
     .preview .body img {
-      height: calc(100% - 20px);
+      height: calc(100% - 40px);
       width: auto; }
     .preview .body iframe {
       border: none; }
