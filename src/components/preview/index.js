@@ -1,5 +1,5 @@
 import {useState} from "preact/hooks";
-import {advertsThumbnail, artsThumbnail, awardsOriginal} from "../../utils/imgService";
+import {advertsThumbnail, artsOriginal, artsThumbnail, awardsOriginal} from "../../utils/imgService";
 import style from "./style.css";
 
 const Preview = (props) => {
@@ -33,7 +33,7 @@ const Preview = (props) => {
             image = advertsThumbnail(group[pageNo].image)
             break;
         case "arts":
-            image = artsThumbnail(group[pageNo].image)
+            image = artsOriginal(group[pageNo].image)
             break;
         case "awards":
             image = awardsOriginal(group[pageNo].image)
@@ -51,7 +51,7 @@ const Preview = (props) => {
                 <img
                     alt="preview"
                     src={image}
-                    height={height} width={width} />
+                     />
             }
         </div>
         {pageNo > 0 && <div class={style.left} onClick={onPrevClicked}>prev</div>}
