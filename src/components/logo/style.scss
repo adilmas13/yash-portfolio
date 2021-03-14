@@ -6,6 +6,8 @@
   width: fit-content;
   padding: 20px 0;
   align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out transform;
 
   .logo {
     height: 50px;
@@ -20,5 +22,9 @@
     text-align: center;
     margin-top: 10px;
     letter-spacing: 3px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }

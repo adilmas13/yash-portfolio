@@ -3,7 +3,9 @@
   flex-direction: column;
   width: fit-content;
   padding: 20px 0;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out transform; }
   .logo-parent .logo {
     height: 50px;
     width: 50px; }
@@ -15,5 +17,7 @@
     text-align: center;
     margin-top: 10px;
     letter-spacing: 3px; }
+  .logo-parent:hover {
+    transform: scale(1.1); }
 
 /*# sourceMappingURL=style.css.map */
