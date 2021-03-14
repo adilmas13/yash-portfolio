@@ -71,22 +71,47 @@ const Preview = (props) => {
             break;
     }
 
+    const enableArrow = {
+        visibility : 'visible',
+        pointerEvents : 'auto'
+    }
+
+    const disableArrow = {
+        visibility : 'hidden',
+        pointerEvents: 'none'
+    }
+
     return (<div class={style.preview}>
         <img class={style.cancel}
              src="assets/back.svg"
              onClick={props.onCancelClicked}
         />
-        <div class={style.body}>
-            {group[pageNo].videoId
-                ? <iframe
-                    width={width}
-                    height={height}
-                    src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} />
-                : <LoadableImage src={image} />
-            }
+        <div class={style["body-wrapper"]}>
+            <div
+                style={pageNo > 0 ? enableArrow : disableArrow}
+                class={style["prev-wrapper"]}
+                 onClick={onPrevClicked}>
+                <img src={"assets/arrow_blunt.svg"}
+                     class={style.arrow} />
+                <div class={style.text}>prev</div>
+            </div>
+            <div class={style.body}>
+                {group[pageNo].videoId
+                    ? <iframe
+                        width={width}
+                        height={height}
+                        src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} />
+                    : <LoadableImage src={image} />
+                }
+            </div>
+            <div
+                style={pageNo < (group.length - 1) ? enableArrow : disableArrow}
+                class={style["next-wrapper"]}
+                 onClick={onNextClicked}>
+                <div class={style.text}>next</div>
+                <img src={"assets/arrow_blunt.svg"} class={style.arrow} />
+            </div>
         </div>
-        {pageNo > 0 && <div class={style.left} onClick={onPrevClicked}>prev</div>}
-        {pageNo < (group.length - 1) && <div class={style.right} onClick={onNextClicked}>next</div>}
     </div>)
 };
 

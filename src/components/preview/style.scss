@@ -27,59 +27,88 @@
     }
   }
 
-  .body {
+  .body-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
+    font-family: Yfx, serif;
+    color: $text-primary-color;
 
-    .image-wrapper {
-      position: relative;
+    .body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100%;
-      width: 100%;
+      flex: 1;
+
+      .image-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: calc(100% - 40px);
+          width: auto;
+          transition: 0.3s ease-out all;
+        }
+
+        .loader {
+          position: absolute;
+          font-size: 30px;
+          font-weight: 600;
+        }
+      }
+
+      iframe {
+        border: none;
+      }
+    }
+
+    .prev-wrapper {
+      width: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
 
-      img {
-        height: calc(100% - 40px);
-        width: auto;
-        transition: 0.3s ease-out all;
+      .text {
+        font-size: 18px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-left: 10px;
+        padding-top: 4px;
       }
 
-      .loader {
-        position: absolute;
-        font-size: 30px;
-        font-weight: 600;
+      .arrow {
+        width: 20px;
+        transform: rotate(270deg);
       }
     }
 
-    iframe {
-      border: none;
+    .next-wrapper {
+      width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .text {
+        font-size: 18px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-right: 10px;
+        padding-top: 4px;
+      }
+
+      .arrow {
+        width: 20px;
+        transform: rotate(90deg);
+      }
     }
-  }
-
-  .left {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    font-family: Yfx, serif;
-    color: $text-primary-color;
-    font-size: 18px;
-    letter-spacing: 1px;
-    cursor: pointer;
-  }
-
-  .right {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    font-family: Yfx, serif;
-    color: $text-primary-color;
-    font-size: 18px;
-    letter-spacing: 1px;
-    cursor: pointer;
   }
 }
 
