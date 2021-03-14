@@ -1,26 +1,30 @@
 .parent {
-  display: grid;
-  grid-template-columns: 300px 300px 300px;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 40px;
-  position: relative;
-  padding-bottom: 10px; }
-  .parent .image-wrapper {
-    min-height: 165px;
-    border-radius: 10px;
-    transition: 0.3s ease-out all;
-    overflow: hidden; }
-    .parent .image-wrapper .cell {
-      width: 100%;
-      height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .parent .grid {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+    position: relative;
+    padding-bottom: 10px; }
+    .parent .grid .image-wrapper {
+      min-height: 165px;
       border-radius: 10px;
-      filter: grayscale(1);
-      cursor: pointer;
-      transition: 0.3s ease-out all; }
-      .parent .image-wrapper .cell:hover {
-        filter: grayscale(0);
-        transform: scale(1.05); }
+      transition: 0.3s ease-out all;
+      overflow: hidden; }
+      .parent .grid .image-wrapper .cell {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        filter: grayscale(1);
+        cursor: pointer;
+        transition: 0.3s ease-out all; }
+        .parent .grid .image-wrapper .cell:hover {
+          filter: grayscale(0);
+          transform: scale(1.05); }
 
 .hidden {
   opacity: 0;
@@ -31,11 +35,11 @@
   filter: blur(0); }
 
 @media only screen and (max-width: 600px) {
-  .parent {
+  .grid {
     grid-template-columns: 90%;
     padding-top: 20px;
     gap: 10px; }
-    .parent .cell {
+    .grid .cell {
       filter: grayscale(0); } }
 
 /*# sourceMappingURL=style.css.map */

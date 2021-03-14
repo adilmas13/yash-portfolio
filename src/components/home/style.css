@@ -73,7 +73,7 @@
         font-size: 14px; }
   .parent .logo-wrapper {
     position: absolute;
-    top: 20px;
+    top: 0;
     left: calc(50% - 25px); }
 
 @media only screen and (max-width: 600px) {

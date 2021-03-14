@@ -5,6 +5,7 @@ import {awardsOriginal, awardsThumbnails} from "../../utils/dataService";
 import {awardsThumbnail} from "../../utils/imgService";
 import {useState} from "preact/hooks";
 import Preview from "../preview";
+import Logo from "../logo";
 
 const MediaCell = (props) => {
     const [isImageLoaded, setImageLoaded] = useState(false);
@@ -40,11 +41,14 @@ const Awards = () => {
     };
 
     return <div class={style.parent}>
-        {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
-        {previewMedia &&
-        <Preview
-            data={previewMedia}
-            onCancelClicked={() => setPreviewMedia(undefined)} />}
+        <Logo />
+        <div class={style.grid}>
+            {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
+            {previewMedia &&
+            <Preview
+                data={previewMedia}
+                onCancelClicked={() => setPreviewMedia(undefined)} />}
+        </div>
     </div>
 };
 

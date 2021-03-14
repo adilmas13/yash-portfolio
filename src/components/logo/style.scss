@@ -3,6 +3,8 @@
 .logo-parent {
   display: flex;
   flex-direction: column;
+  width: fit-content;
+  padding: 20px 0;
 
   .logo {
     height: 50px;
