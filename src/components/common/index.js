@@ -113,7 +113,7 @@ const CommonListing = (props) => {
     const onCellLeave = () => setActiveMedia(undefined);
 
     return <div class={style.parent}>
-        <Logo />
+        <Logo title={props.config.type}/>
         <div class={style['scroll-container']}>
             {data.map(it =>
                 <div class={style.column}>

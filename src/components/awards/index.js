@@ -41,7 +41,7 @@ const Awards = () => {
     };
 
     return <div class={style.parent}>
-        <Logo />
+        <Logo title={"awards"} />
         <div class={style.grid}>
             {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
             {previewMedia &&
