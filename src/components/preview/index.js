@@ -2,6 +2,16 @@ import {useEffect, useRef, useState} from "preact/hooks";
 import {advertsThumbnail, artsOriginal, awardsOriginal} from "../../utils/imgService";
 import style from "./style.css";
 
+const Back = (props) => {
+    return (
+        <div class={style["back-parent"]} onClick={() => props.onCancel()}>
+            <div class={style["icon-wrapper"]}>
+                <img src={'assets/cross.svg'} />
+            </div>
+            <div class={style.text}>BACK</div>
+        </div>
+    )
+}
 const LoadableImage = (props) => {
 
     const [isImageLoaded, setImageLoaded] = useState(false);
@@ -72,25 +82,24 @@ const Preview = (props) => {
     }
 
     const enableArrow = {
-        visibility : 'visible',
-        pointerEvents : 'auto'
+        visibility: 'visible',
+        pointerEvents: 'auto'
     }
 
     const disableArrow = {
-        visibility : 'hidden',
+        visibility: 'hidden',
         pointerEvents: 'none'
     }
 
     return (<div class={style.preview}>
-        <img class={style.cancel}
-             src="assets/back.svg"
-             onClick={props.onCancelClicked}
-        />
+        <div class={style.cancel}>
+            <Back onCancel={() => props.onCancelClicked()} />
+        </div>
         <div class={style["body-wrapper"]}>
             <div
                 style={pageNo > 0 ? enableArrow : disableArrow}
                 class={style["prev-wrapper"]}
-                 onClick={onPrevClicked}>
+                onClick={onPrevClicked}>
                 <img src={"assets/arrow_blunt.svg"}
                      class={style.arrow} />
                 <div class={style.text}>prev</div>
@@ -107,7 +116,7 @@ const Preview = (props) => {
             <div
                 style={pageNo < (group.length - 1) ? enableArrow : disableArrow}
                 class={style["next-wrapper"]}
-                 onClick={onNextClicked}>
+                onClick={onNextClicked}>
                 <div class={style.text}>next</div>
                 <img src={"assets/arrow_blunt.svg"} class={style.arrow} />
             </div>
