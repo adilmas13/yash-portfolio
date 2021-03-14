@@ -1,16 +1,14 @@
 .parent {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    min-width: 100vw;
-    font-size: 50px;
-    font-weight: 500;
-}
-
-.parent .loader {
-    width: 150px;
-}
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  font-size: 50px;
+  font-weight: 500;
+  background: #eeeeee; }
+  .parent .loader {
+    width: 50%; }
 
 /*# sourceMappingURL=style.css.map */

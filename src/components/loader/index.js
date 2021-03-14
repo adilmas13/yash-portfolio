@@ -1,21 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React, {createRef} from "preact";
+import React from "preact";
 import style from './style.css';
-// import bodymovin from 'bodymovin'
+import Lottie from 'react-lottie';
+import animation from '../../assets/data.json'
 
 const Loader = () => {
-    const ref = createRef()
-    // useEffect(() => {
-    //     bodymovin.loadAnimation({
-    //         wrapper: ref.current,
-    //         animType: 'svg',
-    //         loop: true,
-    //         path: 'https://labs.nearpod.com/bodymovin/demo/pancakes/data.json'
-    //     })
-    // }, [])
+
+    const bodymovinOptions = {
+        loop: true,
+        autoplay: true,
+        prerender: true,
+        animationData: animation
+    }
 
     return <div class={style.parent}>
-        <div class={style.loader} ref={ref} />
+        <div class={style["loader"]}><Lottie options={bodymovinOptions} /></div>
     </div>
 };
 
