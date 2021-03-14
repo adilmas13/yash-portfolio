@@ -1,0 +1,21 @@
+@import "../../assets/styles/colors";
+
+.logo-parent {
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .logo-text {
+    font-size: 12px;
+    font-family: Yfx, serif;
+    font-weight: 200;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 3px;
+  }
+}

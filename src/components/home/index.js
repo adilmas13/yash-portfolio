@@ -4,6 +4,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {slotVideos, slotVideosReverse} from "../../utils/dataService";
 import {route} from "preact-router";
+import Logo from "../logo";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
@@ -195,8 +196,7 @@ const Home = () => {
             <Designation />
         </div>
         <div class={style["logo-wrapper"]}>
-            <img class={style.logo} src={"assets/home_icon.svg"} />
-            <span class={style["logo-text"]}>home</span>
+            <Logo />
         </div>
     </div>
 };
