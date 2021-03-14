@@ -44,11 +44,11 @@ const Awards = () => {
         <Logo title={"awards"} />
         <div class={style.grid}>
             {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
-            {previewMedia &&
-            <Preview
-                data={previewMedia}
-                onCancelClicked={() => setPreviewMedia(undefined)} />}
         </div>
+        {previewMedia &&
+        <Preview
+            data={previewMedia}
+            onCancelClicked={() => setPreviewMedia(undefined)} />}
     </div>
 };
 
