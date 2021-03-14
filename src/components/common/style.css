@@ -1,14 +1,17 @@
 .parent {
   height: 100vh;
   min-width: 100vw;
-  position: relative; }
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
   .parent .scroll-container {
     overflow: scroll;
     display: flex;
     height: 100%;
     width: 100%;
     justify-content: center;
-    padding-top: 40px; }
+    padding-top: 20px; }
     .parent .scroll-container .column {
       display: flex;
       flex-direction: column;

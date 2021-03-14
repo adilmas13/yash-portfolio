@@ -4,6 +4,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
 import Preview from "../preview";
+import Logo from "../logo";
 
 
 const MediaCell = (props) => {
@@ -48,7 +49,7 @@ const MediaCell = (props) => {
     }
 
     let cellStyle = {
-        minHeight : props.media.ratio === "16:9" ? "115px" : "285px",
+        minHeight: props.media.ratio === "16:9" ? "115px" : "285px",
         backgroundColor: props.media.color || "lightgrey"
     }
 
@@ -112,6 +113,7 @@ const CommonListing = (props) => {
     const onCellLeave = () => setActiveMedia(undefined);
 
     return <div class={style.parent}>
+        <Logo />
         <div class={style['scroll-container']}>
             {data.map(it =>
                 <div class={style.column}>

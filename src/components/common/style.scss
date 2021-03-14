@@ -4,6 +4,9 @@
   height: 100vh;
   min-width: 100vw;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   .scroll-container {
     overflow: scroll;
@@ -11,7 +14,7 @@
     height: 100%;
     width: 100%;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 20px;
 
     .column {
       display: flex;
