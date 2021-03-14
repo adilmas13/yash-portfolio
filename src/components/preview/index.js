@@ -1,6 +1,37 @@
-import {useState} from "preact/hooks";
-import {advertsThumbnail, artsOriginal, artsThumbnail, awardsOriginal} from "../../utils/imgService";
+import {useEffect, useRef, useState} from "preact/hooks";
+import {advertsThumbnail, artsOriginal, awardsOriginal} from "../../utils/imgService";
 import style from "./style.css";
+
+const LoadableImage = (props) => {
+
+    const [isImageLoaded, setImageLoaded] = useState(false);
+    const imgRef = useRef(null);
+
+    useEffect(() => {
+        let timeoutId = setTimeout(() => setImageLoaded(false), 800)
+        const img = imgRef.current;
+        const loadedListener = () => {
+            clearTimeout(timeoutId);
+            setImageLoaded(true);
+        };
+        img.addEventListener("load", loadedListener)
+        img.src = props.src;
+        return () => {
+            clearTimeout(timeoutId)
+            img.removeEventListener("load", loadedListener)
+        }
+    }, [props.src]);
+
+    return <div class={style["image-wrapper"]}>
+        <img
+            class={isImageLoaded ? style["visible"] : style["hidden"]}
+
+            ref={imgRef}
+            alt="preview"
+        />
+        {!isImageLoaded && <div class={style["loader"]}>Loading</div>}
+    </div>
+}
 
 const Preview = (props) => {
     const group = props.data.group;
@@ -46,12 +77,12 @@ const Preview = (props) => {
              onClick={props.onCancelClicked}
         />
         <div class={style.body}>
-            {group[pageNo].videoId ? <iframe width={width} height={height}
-                                             src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} /> :
-                <img
-                    alt="preview"
-                    src={image}
-                     />
+            {group[pageNo].videoId
+                ? <iframe
+                    width={width}
+                    height={height}
+                    src={`https://www.youtube.com/embed/${group[pageNo].videoId}`} />
+                : <LoadableImage src={image} />
             }
         </div>
         {pageNo > 0 && <div class={style.left} onClick={onPrevClicked}>prev</div>}

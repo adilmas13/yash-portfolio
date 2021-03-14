@@ -34,9 +34,25 @@
     height: 100%;
     width: 100%;
 
-    img {
-      height: calc(100% - 40px);
-      width: auto;
+    .image-wrapper {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        height: calc(100% - 40px);
+        width: auto;
+        transition: 0.3s ease-out all;
+      }
+
+      .loader {
+        position: absolute;
+        font-size: 30px;
+        font-weight: 600;
+      }
     }
 
     iframe {
@@ -65,4 +81,14 @@
     letter-spacing: 1px;
     cursor: pointer;
   }
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.visible {
+  opacity: 1;
+  filter: blur(0);
 }

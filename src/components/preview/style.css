@@ -26,9 +26,21 @@
     align-items: center;
     height: 100%;
     width: 100%; }
-    .preview .body img {
-      height: calc(100% - 40px);
-      width: auto; }
+    .preview .body .image-wrapper {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .preview .body .image-wrapper img {
+        height: calc(100% - 40px);
+        width: auto;
+        transition: 0.3s ease-out all; }
+      .preview .body .image-wrapper .loader {
+        position: absolute;
+        font-size: 30px;
+        font-weight: 600; }
     .preview .body iframe {
       border: none; }
   .preview .left {
@@ -49,5 +61,13 @@
     font-size: 18px;
     letter-spacing: 1px;
     cursor: pointer; }
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px); }
+
+.visible {
+  opacity: 1;
+  filter: blur(0); }
 
 /*# sourceMappingURL=style.css.map */
